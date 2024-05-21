@@ -20,6 +20,7 @@
         display: grid;
         grid-template-columns: 4fr;
         max-width: 80%;
+
         margin-left: 15%;
         padding: 20px;
         gap: 20px;
@@ -307,33 +308,38 @@
       <div class="contenedor">
         <section class="detalle_propiedad">
           <div>
-            <h2 style="text-align: center; color: #30616c">Casa Moderna</h2>
+            <h1 style="text-align: center; color: #30616c">Casa Moderna</h1>
           </div>
-          <div class="info_imagen">
+          <article class="info_imagen">
             <div class="informacion_propiedad">
               <h3 style="color: #30616c">Detalles de la propiedad</h3>
-              <p>
-                <strong>Dirección:</strong> Calle: 123, Ciudad: Guayaquil, País:
-                Ecuador
-              </p>
-              <p>
-                <strong>Descripción:</strong> Una hermosa propiedad, muy
-                espaciosa con grandes vistas de la ciudad.
-              </p>
-              <p><strong>Precio de la casa:</strong> $1000 mensuales</p>
-              <p>
-                <strong>Incluido:</strong> Wi-Fi, Aire acondicionado,
-                Estacionamiento, Piscina, Televisión
-              </p>
+              <ul>
+                <li>
+                  <strong>Dirección:</strong> Calle: 123, Ciudad: Guayaquil,
+                  País: Ecuador
+                </li>
+                <li>
+                  <strong>Descripción:</strong> Una hermosa propiedad, muy
+                  espaciosa con grandes vistas de la ciudad.
+                </li>
+                <li><strong>Precio de la casa:</strong> $1000 mensuales</li>
+                <li>
+                  <strong>Incluido:</strong> Wi-Fi, Aire acondicionado,
+                  Estacionamiento, Piscina, Televisión
+                </li>
+              </ul>
             </div>
             <div id="propiedad_imagen">
-              <img
-                src="assets/img/casa.jpg"
-                alt="Imagen de la propiedad"
-                style="width: 100%; border-radius: 8px"
-              />
+              <figure>
+                <img
+                  src="assets/img/casa.jpg"
+                  alt="Imagen de la propiedad"
+                  style="width: 100%; border-radius: 8px"
+                />
+                <figcaption>Imagen de casa moderna</figcaption>
+              </figure>
             </div>
-          </div>
+          </article>
           <div class="boton">
             <button id="anadir">Añadir a Favoritos</button>
             <button id="comprar">Comprar</button>
@@ -342,29 +348,33 @@
         <section class="opiniones">
           <h3 style="color: #30616c">Calificaciones y Opiniones</h3>
           <div class="opinion">
-            <p><strong>Usuario:</strong> Brithany Vera</p>
-            <p><strong>Calificación:</strong> ★☆☆☆☆</p>
-            <p>
-              <strong>Comentario:</strong> El wifi esta lento, pésimo servicio
-              para un estudiante 😔.
-            </p>
+            <details>
+              <summary><strong>Usuario:</strong> Brithany Vera</summary>
+              <p><strong>Calificación:</strong> ★☆☆☆☆</p>
+              <p>
+                <strong>Comentario:</strong> El wifi está lento, pésimo servicio
+                para un estudiante 😔.
+              </p>
+            </details>
           </div>
           <div class="opinion">
-            <p><strong>Usuario:</strong> Ana Guitierrez</p>
-            <p><strong>Calificación:</strong> ★★★★★</p>
-            <p>
-              <strong>Comentario:</strong> La mejor casa en la que haya pasado
-              el rato.
-            </p>
+            <details>
+              <summary><strong>Usuario:</strong> Ana Guitierrez</summary>
+              <p><strong>Calificación:</strong> ★★★★★</p>
+              <p>
+                <strong>Comentario:</strong> La mejor casa en la que haya pasado
+                el rato.
+              </p>
+            </details>
           </div>
         </section>
 
-        <section class="contact_info">
+        <aside class="contact_info">
           <h3 style="color: #30616c">Información de Contacto</h3>
           <p><strong>Propietario:</strong> Grupo 1</p>
           <p><strong>Correo Electrónico:</strong> jeremuvelez328@gmail.com</p>
           <p><strong>Teléfono:</strong> +0979026756</p>
-        </section>
+        </aside>
         <div class="galeria_casa">
           <section class="fotos_casa">
             <h3 style="color: #30616c">Patio trasero</h3>
@@ -391,17 +401,16 @@
         <div class="box">
           <h2>Sobre Nosotros</h2>
           <p>
-            En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler
-            de propiedades, ya sean departamentos, casas, o cualquier otro tipo
-            de inmueble. Nuestra misión es conectar de manera efectiva a
-            propietarios e inquilinos, brindando soluciones prácticas y seguras
-            para ambas partes.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod
+            debitis quaerat officiis odio suscipit laudantium hic fugit. Sunt,
+            iure, neque commodi possimus iusto quasi, nesciunt enim blanditiis
+            error suscipit natus!
           </p>
           <p>
-            Nuestro equipo está comprometido en ofrecer un servicio de alta
-            calidad, nos esforzamos por simplificar el proceso de búsqueda,
-            alquiler y gestión de propiedades, asegurando una experiencia
-            satisfactoria para todos nuestros usuarios.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            aspernatur unde dolorum hic blanditiis nihil aliquid repellendus
+            minima mollitia soluta, incidunt libero eaque, dolores quisquam
+            maiores quod eius eum! Nemo?
           </p>
         </div>
         <div class="box">

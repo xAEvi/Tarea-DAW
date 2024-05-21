@@ -62,9 +62,9 @@
       a {
         color: #65a5a5;
         transition: 0.4s ease-in-out;
+        text-decoration: none;
       }
-      /*Selector de pseudoclase*/
-      a:hover {
+      /Selector de pseudoclase/ a:hover {
         color: #1a415a;
       }
 
@@ -272,6 +272,12 @@
         border-radius: 50%;
         border: 1px solid black;
       }
+      #iframe {
+        display: none; /* Inicialmente oculto */
+      }
+      #perfil:hover + #iframe {
+        display: block;
+      }
 
       @media (max-width: 775px) {
         .search-bar input::placeholder {
@@ -368,20 +374,25 @@
         <div class="seccion usuarioInfo">
           <div class="titulo">
             <h2>Perfil Usuario</h2>
-            <button class="btnCambios">Editar Perfil</button>
+            <a class="btnCambios" href="#">Editar Perfil</a>
           </div>
+
           <div class="contenedorSecciones">
             <div class="fotoUser">
               <img
+                id="perfil"
                 src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
                 alt="Usuario"
               />
-              <button class="editarFoto">Cambiar Foto</button>
+              <iframe id="iframe" src="assets/img/pq2.jpg"></iframe>
+              <a class="editarFoto" href="#">Cambiar Foto</a>
             </div>
             <div class="informacion">
               <p class="izq"><strong>Nombre:</strong> Daniela Garcia Vargas</p>
               <br />
-              <p class="izq"><strong>Correo:</strong> Danielagv@gmail.com</p>
+              <p class="izq">
+                <strong>Correo:</strong><i><u>Danielagv@gmail.com</u></i>
+              </p>
               <br />
               <p class="izq"><strong>Genero:</strong> Femenino</p>
               <br />
@@ -394,6 +405,11 @@
               <p class="izq"><strong>Idioma:</strong> Español e Ingles</p>
               <br />
               <p class="izq"><strong>Direccion:</strong> Guayaquil - Duran</p>
+              <br />
+              <p class="izq">
+                <strong>Fecha de Nacimiento:</strong
+                ><time datetime="2002-05-02">02 de mayo del 2002</time>
+              </p>
               <br />
             </div>
             <div id="redesSociales">
@@ -465,17 +481,15 @@
         <div class="seccion guardadosdeAlquiler">
           <div class="titulo">
             <h2>Favoritos</h2>
-            <a href="search.html">
-              <button class="btnCambios">+ Agregar alquiler</button>
-            </a>
+            <a class="btnCambios" href="search.html"> + Agregar alquiler </a>
           </div>
           <div class="contenedorSecciones">
             <div class="alquiler">
-              <img src="assets/img/descarga (2).jpg" alt="casa" />
+              <img src="assets/img/descarga(2).jpg" alt="casa" />
               <div class="alquiler-informacion">
-                <p><strong>Guayaquil-Centro</strong></p>
-                <p>Cuarto con Baño y cocina disponibles</p>
-                <p>$125</p>
+                <p><strong>Guayaquil-Duran</strong></p>
+                <p>Departamento con 1 cuarto disponible</p>
+                <p><em>$125</em></p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -491,11 +505,11 @@
               </svg>
             </div>
             <div class="alquiler">
-              <img src="assets/img/descarga (2).jpg" alt="casa" />
+              <img src="assets/img/descarga(2).jpg" alt="casa" />
               <div class="alquiler-informacion">
                 <p><strong>Guayaquil-Centro</strong></p>
                 <p>Cuarto con Baño y cocina disponibles</p>
-                <p>$125</p>
+                <p><em>$125</em></p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -511,11 +525,11 @@
               </svg>
             </div>
             <div class="alquiler">
-              <img src="assets/img/images (1).jpg" alt="Departamento2" />
+              <img src="assets/img/images(1).jpg" alt="Departamento2" />
               <div class="alquiler-informacion">
                 <p><strong>Samborondon-Las Joyas</strong></p>
                 <p>Departamento con 1 cuarto equidado</p>
-                <p>$200</p>
+                <p><em>$200</em></p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -531,11 +545,11 @@
               </svg>
             </div>
             <div class="alquiler">
-              <img src="assets/img/images (2).jpg" alt="casa2" />
+              <img src="assets/img/images(2).jpg" alt="casa2" />
               <div class="alquiler-informacion">
                 <p><strong>Manabi-Chone</strong></p>
                 <p>Casa de alquiler con servicios basicos</p>
-                <p>$210</p>
+                <p><em>$210</em></p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -551,11 +565,11 @@
               </svg>
             </div>
             <div class="alquiler">
-              <img src="assets/img/images (3).jpg" alt="casa3" />
+              <img src="assets/img/images(3).jpg" alt="casa3" />
               <div class="alquiler-informacion">
                 <p><strong>Los Rios-Machala</strong></p>
                 <p>Casa de aquiler con servicios basicos</p>
-                <p>$250</p>
+                <p><em>$250</em></p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -586,17 +600,16 @@
         <div class="box">
           <h2>Sobre Nosotros</h2>
           <p>
-            En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler
-            de propiedades, ya sean departamentos, casas, o cualquier otro tipo
-            de inmueble. Nuestra misión es conectar de manera efectiva a
-            propietarios e inquilinos, brindando soluciones prácticas y seguras
-            para ambas partes.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod
+            debitis quaerat officiis odio suscipit laudantium hic fugit. Sunt,
+            iure, neque commodi possimus iusto quasi, nesciunt enim blanditiis
+            error suscipit natus!
           </p>
           <p>
-            Nuestro equipo está comprometido en ofrecer un servicio de alta
-            calidad, nos esforzamos por simplificar el proceso de búsqueda,
-            alquiler y gestión de propiedades, asegurando una experiencia
-            satisfactoria para todos nuestros usuarios.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            aspernatur unde dolorum hic blanditiis nihil aliquid repellendus
+            minima mollitia soluta, incidunt libero eaque, dolores quisquam
+            maiores quod eius eum! Nemo?
           </p>
         </div>
         <div class="box">
