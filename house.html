@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Detalles de propiedad</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Vélez Pulido Christopher Jeremy" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/8b96afa7e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .contenedor {
+        display: grid;
+        grid-template-columns: 4fr;
+        max-width: 80%;
+        margin-left: 15%;
+        padding: 20px;
+        gap: 20px;
+        background-color: #e47c7c;
+        border-radius: 8px;
+      }
+
+      .detalle_propiedad,
+      .opiniones {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .opinion,
+      .contact_info,
+      .fotos_casa {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+      .contenedor .opinion {
+        margin: 10px 0;
+      }
+      .contact_info {
+        grid-row: 2;
+        grid-column: 1;
+      }
+
+      @media (min-width: 768px) {
+        .contenedor {
+          grid-template-columns: 4fr 3fr;
+        }
+      }
+
+      .informacion_propiedad,
+      #propiedad_imagen,
+      .boton {
+        float: left;
+        margin-top: 10px;
+      }
+
+      .info_imagen > .informacion_propiedad {
+        width: 100%;
+      }
+
+      #propiedad_imagen {
+        width: 100%;
+        margin: auto;
+      }
+      .info_imagen {
+        display: flex;
+      }
+      @media (max-width: 800px) {
+        .info_imagen {
+          flex-direction: column-reverse;
+        }
+      }
+
+      .boton button {
+        background-color: #19828c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      .boton button:hover {
+        background-color: #1a415a;
+      }
+
+      .galeria_casa {
+        display: flex;
+
+        gap: 20px;
+      }
+
+      .fotos_casa {
+        flex: 1 1 calc(50% - 40px);
+      }
+      .contact_info p + p {
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      img[alt="Imagen casa"] {
+        width: 100px;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+      }
+      .contact_info h3 ~ p {
+        text-align: left;
+      }
+
+      .detalle_propiedad::before {
+        content: "Casa en promoción: ";
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+
+      main {
+        height: 100vh;
+        padding: 5rem 0;
+      }
+
+      @media (max-width: 775px) {
+        main {
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          height: auto;
+        }
+        .contenedor {
+          margin-left: 5%;
+        }
+      }
+
+      .footer {
+        width: calc(100vw - 100px);
+        float: right;
+      }
+
+      #main-icon {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+
+      #main-icon img {
+        width: 50px;
+      }
+
+      .icon {
+        margin: auto;
+        width: 30px;
+      }
+
+      #sidenav {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      #sidenav a {
+        display: flex;
+        height: 50px;
+      }
+
+      #sidenav a:hover {
+        background-color: #19828c;
+      }
+
+      .sidebar {
+        position: fixed;
+        background-color: #30616c;
+        height: 100%;
+        width: 100px;
+        float: left;
+        padding: 50px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user {
+        margin-top: auto;
+      }
+
+      .user:hover {
+        cursor: pointer;
+      }
+
+      .user img {
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+
+      @media (max-width: 775px) {
+        .search-bar input::placeholder {
+          opacity: 0;
+        }
+
+        .main-container {
+          margin-left: 0;
+        }
+
+        .sidebar {
+          position: relative;
+          float: none;
+          width: 100%;
+          height: 100px;
+          flex-direction: row;
+          padding: 0 1rem;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        #sidenav {
+          flex-direction: row;
+        }
+
+        #main-icon {
+          margin-bottom: 0;
+          width: auto;
+        }
+
+        .user {
+          margin: 0;
+        }
+
+        .main-container {
+          width: auto;
+          margin-left: 2rem;
+          float: none;
+          display: unset;
+        }
+
+        .filter-container {
+          padding: 1rem;
+          width: auto;
+          height: auto;
+        }
+
+        .apply {
+          width: 150px;
+        }
+
+        .apparment-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .container {
+          margin-left: 0;
+        }
+
+        .bath-bed-container {
+          flex-direction: column;
+        }
+
+        .footer {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <header>
+        <img
+          style="width: 65px"
+          id="main-icon"
+          src="assets/img/logo.png"
+          alt="Icon"
+        />
+      </header>
+      <nav id="sidenav">
+        <a href="index.html"
+          ><img class="icon" src="assets/img/home.svg" alt="Home"
+        /></a>
+        <a href="search.html"
+          ><img class="icon" src="assets/img/squares.svg" alt="Search"
+        /></a>
+        <a href="contact.html"
+          ><img class="icon" src="assets/img/contact.svg" alt="Contact"
+        /></a>
+      </nav>
+
+      <div class="user">
+        <a href="vistaUser.html"
+          ><img
+            src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
+            alt="User"
+            style="height: 50px"
+        /></a>
+      </div>
+    </div>
+    <nav></nav>
+    <main>
+      <div class="contenedor">
+        <section class="detalle_propiedad">
+          <div>
+            <h2 style="text-align: center; color: #30616c">Casa Moderna</h2>
+          </div>
+          <div class="info_imagen">
+            <div class="informacion_propiedad">
+              <h3 style="color: #30616c">Detalles de la propiedad</h3>
+              <p>
+                <strong>Dirección:</strong> Calle: 123, Ciudad: Guayaquil, País:
+                Ecuador
+              </p>
+              <p>
+                <strong>Descripción:</strong> Una hermosa propiedad, muy
+                espaciosa con grandes vistas de la ciudad.
+              </p>
+              <p><strong>Precio de la casa:</strong> $1000 mensuales</p>
+              <p>
+                <strong>Incluido:</strong> Wi-Fi, Aire acondicionado,
+                Estacionamiento, Piscina, Televisión
+              </p>
+            </div>
+            <div id="propiedad_imagen">
+              <img
+                src="assets/img/casa.jpg"
+                alt="Imagen de la propiedad"
+                style="width: 100%; border-radius: 8px"
+              />
+            </div>
+          </div>
+          <div class="boton">
+            <button id="anadir">Añadir a Favoritos</button>
+            <button id="comprar">Comprar</button>
+          </div>
+        </section>
+        <section class="opiniones">
+          <h3 style="color: #30616c">Calificaciones y Opiniones</h3>
+          <div class="opinion">
+            <p><strong>Usuario:</strong> Brithany Vera</p>
+            <p><strong>Calificación:</strong> ★☆☆☆☆</p>
+            <p>
+              <strong>Comentario:</strong> El wifi esta lento, pésimo servicio
+              para un estudiante 😔.
+            </p>
+          </div>
+          <div class="opinion">
+            <p><strong>Usuario:</strong> Ana Guitierrez</p>
+            <p><strong>Calificación:</strong> ★★★★★</p>
+            <p>
+              <strong>Comentario:</strong> La mejor casa en la que haya pasado
+              el rato.
+            </p>
+          </div>
+        </section>
+
+        <section class="contact_info">
+          <h3 style="color: #30616c">Información de Contacto</h3>
+          <p><strong>Propietario:</strong> Grupo 1</p>
+          <p><strong>Correo Electrónico:</strong> jeremuvelez328@gmail.com</p>
+          <p><strong>Teléfono:</strong> +0979026756</p>
+        </section>
+        <div class="galeria_casa">
+          <section class="fotos_casa">
+            <h3 style="color: #30616c">Patio trasero</h3>
+            <p>Este domicilio tiene un patio muy espacioso y hermoso.</p>
+            <img src="assets/img/patio.jpg" alt="Imagen casa" />
+          </section>
+          <section class="fotos_casa">
+            <h3 style="color: #30616c">Interior de la casa</h3>
+            <p>La casa tiene una hermosa sala.</p>
+            <img src="assets/img/sala.jpg" alt="Imagen casa" />
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer" style="display: block">
+      <div class="grupo1">
+        <div class="box">
+          <figure>
+            <a href="index.html">
+              <img src="assets/img/logo.png" alt="Logo_empresa" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod
+            debitis quaerat officiis odio suscipit laudantium hic fugit. Sunt,
+            iure, neque commodi possimus iusto quasi, nesciunt enim blanditiis
+            error suscipit natus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            aspernatur unde dolorum hic blanditiis nihil aliquid repellendus
+            minima mollitia soluta, incidunt libero eaque, dolores quisquam
+            maiores quod eius eum! Nemo?
+          </p>
+        </div>
+        <div class="box">
+          <h2>Siguenos en:</h2>
+          <div class="Redes">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo2">
+        <small
+          >&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Xavier Molina Cisneros" />
+    <title>Buscar propiedades</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/8b96afa7e9.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .main-container {
+        margin-left: 100px;
+        float: left;
+        height: max-content;
+        display: flex;
+        width: calc(100vw - 125px);
+        padding: 2rem 0;
+        padding-right: 1.5rem;
+      }
+
+      #main-icon {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+
+      #main-icon img {
+        width: 50px;
+      }
+
+      .icon {
+        margin: auto;
+        width: 30px;
+      }
+
+      #sidenav {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      #sidenav a {
+        display: flex;
+        height: 50px;
+      }
+
+      #sidenav a:hover {
+        background-color: #19828c;
+      }
+
+      .sidebar {
+        position: fixed;
+        background-color: #30616c;
+        height: 100%;
+        width: 100px;
+        float: left;
+        padding: 50px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user {
+        margin-top: auto;
+      }
+
+      .user:hover {
+        cursor: pointer;
+      }
+
+      .user img {
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+
+      .filter-container {
+        padding: 0 2rem;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .radio-check {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .price-range-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .min-max {
+        padding-left: 0.5rem;
+        display: flex;
+        gap: 20px;
+      }
+
+      .min-max input {
+        width: 50px;
+      }
+
+      .bath-bed-container {
+        display: flex;
+      }
+
+      .bath-bed-container input {
+        width: 75px;
+      }
+
+      .bath-container,
+      .bedroom-container {
+        font-weight: bold;
+      }
+
+      .bath-bed-container input[type="number"] {
+        margin-top: 10px;
+      }
+
+      .facilities-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .apply {
+        width: 100%;
+        height: 50px;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: none;
+        background-color: #30616c;
+        color: white;
+        font-size: 16px;
+        margin-top: 2rem;
+      }
+
+      .apply:hover {
+        background-color: #19828c;
+        cursor: pointer;
+      }
+
+      .right-container {
+        background-color: white;
+        border-radius: 50px;
+        height: max-content;
+        width: 100%;
+        padding: 2rem;
+      }
+
+      .search-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .search-container input {
+        border: none;
+        background-color: #f3f2f3;
+        width: 100%;
+        font-size: 16px;
+      }
+
+      .search-container input:focus {
+        background-color: #f3f2f3;
+        outline: none;
+      }
+
+      .search-bar,
+      .sort-container {
+        background-color: #f3f2f3;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        border-radius: 15px;
+        height: 50px;
+        gap: 25px;
+        padding: 1.5rem;
+      }
+
+      .sort-container select {
+        border: none;
+        background-color: #f3f2f3;
+        margin-left: -15px;
+      }
+
+      .search-bar {
+        width: 500px;
+      }
+
+      .appartments-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 10px; /* Espacio entre las celdas */
+        place-items: center;
+        gap: 3rem;
+      }
+
+      .apparment {
+        background-color: white;
+        width: 325px;
+        height: 400px;
+        border-radius: 25px;
+        box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+
+      .picture {
+        height: 200px;
+      }
+
+      .app-photo {
+        width: 100%;
+        height: 200px;
+        border: solid 2px #f3f2f3;
+        border-radius: 15px;
+      }
+
+      .save-icon {
+        position: relative;
+        background-color: white;
+        display: inline-block;
+        border-radius: 100%;
+        padding: 0.25rem;
+        bottom: 200px;
+        left: 240px;
+      }
+
+      .divider {
+        height: 2px;
+        border: none;
+        background-color: #f3f2f3;
+        width: 113%;
+        margin-left: -20px;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.25rem;
+        gap: 2rem;
+      }
+
+      .app-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+      }
+
+      .app-icons h5 {
+        margin: 0;
+      }
+
+      .footer {
+        width: calc(100vw - 100px);
+        float: right;
+      }
+
+      @media (max-width: 1250px) {
+        .sort-container h4 {
+          display: none;
+        }
+
+        .search-bar {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 775px) {
+        .search-bar input::placeholder {
+          opacity: 0;
+        }
+
+        .main-container {
+          margin-left: 0;
+        }
+
+        .sidebar {
+          position: relative;
+          float: none;
+          width: 100%;
+          height: 100px;
+          flex-direction: row;
+          padding: 0 1rem;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        #sidenav {
+          flex-direction: row;
+        }
+
+        #main-icon {
+          margin-bottom: 0;
+          width: auto;
+        }
+
+        .user {
+          margin: 0;
+        }
+
+        .main-container {
+          width: auto;
+          margin-left: 2rem;
+          float: none;
+          display: unset;
+        }
+
+        .filter-container {
+          width: auto;
+          height: auto;
+          margin-bottom: 2rem;
+        }
+
+        .filter-container h1 {
+          margin: auto;
+        }
+
+        .apply {
+          width: 150px;
+        }
+
+        .apparment-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .container {
+          margin-left: 0;
+        }
+
+        .bath-bed-container {
+          flex-direction: column;
+        }
+
+        .footer {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #f3f2f3">
+    <div class="sidebar">
+      <header>
+        <img
+          style="width: 65px"
+          id="main-icon"
+          src="assets/img/logo.png"
+          alt="Icon"
+        />
+      </header>
+      <nav id="sidenav">
+        <a href="index.html"
+          ><img class="icon" src="assets/img/home.svg" alt="Home"
+        /></a>
+        <a href="search.html"
+          ><img class="icon" src="assets/img/squares.svg" alt="Search"
+        /></a>
+        <a href="contact.html"
+          ><img class="icon" src="assets/img/contact.svg" alt="Contact"
+        /></a>
+      </nav>
+
+      <div class="user">
+        <a href="vistaUser.html"
+          ><img
+            src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
+            alt="User"
+            style="height: 50px"
+        /></a>
+      </div>
+    </div>
+    <div class="content"></div>
+    <div class="main-container">
+      <div class="filter-container">
+        <h1>Filtros</h1>
+
+        <div class="period-container">
+          <h4>Periodo de alquiler</h4>
+
+          <div class="radio-check">
+            <label>
+              <input type="radio" name="periodo" value="todos" />
+              Todos
+            </label>
+            <label>
+              <input type="radio" name="periodo" value="mensual" />
+              Mensual
+            </label>
+            <label>
+              <input type="radio" name="periodo" value="anual" />
+              Anual
+            </label>
+          </div>
+        </div>
+
+        <div class="price-range-container">
+          <h4>Rango de Precios</h4>
+          <div class="min-max">
+            <input type="number" name="minValue" placeholder="Min" />
+            <input type="number" name="maxValue" placeholder="Max" />
+          </div>
+        </div>
+
+        <div class="bath-bed-container">
+          <div class="bath-container">
+            <label>
+              Bathroom
+              <input type="number" name="minValue" />
+            </label>
+          </div>
+          <div class="bedroom-container">
+            <label>
+              Bedroom
+              <input type="number" name="maxValue" />
+            </label>
+          </div>
+        </div>
+
+        <div class="facilities-container">
+          <h4>Instalaciones Adicionales</h4>
+
+          <div class="radio-check">
+            <label>
+              <input type="checkbox" name="periodo" value="piscina" />
+              Piscina
+            </label>
+            <label>
+              <input type="checkbox" name="periodo" value="garaje" />
+              Garaje
+            </label>
+            <label>
+              <input type="checkbox" name="periodo" value="amoblado" />
+              Amoblado
+            </label>
+          </div>
+        </div>
+
+        <button class="apply">Aplicar Cambios</button>
+      </div>
+      <div class="right-container">
+        <div class="search-container">
+          <div class="search-bar">
+            <img
+              style="height: 35px"
+              src="assets/img/search.svg"
+              alt="Search"
+            />
+            <input type="text" placeholder="Busca aquí" />
+          </div>
+          <div class="sort-container">
+            <h4>Ordenar Por:</h4>
+            <select id="frutas" name="frutas">
+              <option value="manzana">Precio</option>
+              <option value="banana">Ubicación</option>
+              <option value="naranja">Fecha</option>
+            </select>
+          </div>
+        </div>
+        <div class="search-title">
+          <h1>Apartamentos en Guayaquil</h1>
+        </div>
+        <div class="appartments-container">
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+          <div class="apparment">
+            <a href="house.html">
+              <div class="picture">
+                <img
+                  class="app-photo"
+                  src="assets/img/casa.jpg"
+                  alt="Appartment photo"
+                />
+                <div class="save-icon">
+                  <img
+                    style="width: 40px"
+                    src="assets/img/heart.svg"
+                    alt="Favorite"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="tags">
+              <h2 style="color: #e47c7c">$2,123</h2>
+            </div>
+            <div class="description">
+              <h4>Casa Moderna</h4>
+            </div>
+            <hr class="divider" />
+            <div class="icons">
+              <div class="app-icons">
+                <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
+                <h5>3</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/bath.svg"
+                  alt="Bath"
+                />
+                <h5>2</h5>
+              </div>
+              <div class="app-icons">
+                <img
+                  style="height: 25px"
+                  src="assets/img/toilet.svg"
+                  alt="Toilet"
+                />
+                <h5>3</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer" style="display: block">
+      <div class="grupo1">
+        <div class="box">
+          <figure>
+            <a href="index.html">
+              <img src="assets/img/logo.png" alt="Logo_empresa" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod
+            debitis quaerat officiis odio suscipit laudantium hic fugit. Sunt,
+            iure, neque commodi possimus iusto quasi, nesciunt enim blanditiis
+            error suscipit natus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            aspernatur unde dolorum hic blanditiis nihil aliquid repellendus
+            minima mollitia soluta, incidunt libero eaque, dolores quisquam
+            maiores quod eius eum! Nemo?
+          </p>
+        </div>
+        <div class="box">
+          <h2>Siguenos en:</h2>
+          <div class="Redes">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo2">
+        <small
+          >&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>
