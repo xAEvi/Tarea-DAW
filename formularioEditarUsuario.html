@@ -5,25 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Narcisa Carrillo Sanchez">
     <title>formularioEditarUsuario</title>
+    <style>
+         .contenedorPrincipal {
+            margin-left: 80px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: calc(95vw - 100px);
+            padding: 2rem;
+            margin: auto;
+            padding-top: 20vh;
+            margin-left: 50px;
+            
+        }
+        .seccion {
+            background-color: #fff;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        }
+        #btnAceptar {
+            border: 1px solid #e47c;
+            background-color: #fff;
+            color: #e47c7c;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+       #btnAceptar:hover {
+            background-color: #e47c7c;
+            color: #fff;
+        }
+
+
+    </style>
 </head>
 <body>
-    <input type="text" id="nombre" name="nombre"/>
-    <input type="text" id="genero" name="genero"/>
-    <input type="email" id="correo" name="correo"/>
-    <input type="text" id="telefono" name="telefono"/>
-    <input type="text" id="ocupacion" name="ocupacion"/>
-    <input type="text" id="idioma" name="idioma"/>
-    <input type="text" id="hobbies" name="hobbies"/>
-    <select id="direccion" name="direccion">
-        <option value="gD">Guayaquil-Duran</option>
-        <option value="gC">Guayaquil-Centro</option>
-        <option value="sJ">Samborondon-Las Joyas</option>
-        <option value="mC">Manabi-Chone</option>
-    </select>
-    <!--<input type="date" id="fechaNacimiento" name="fechaNacimiento"/>-->
+    <main>
+        <div class="contenedorPrincipal">
+            <div class="seccion">
+                <strong>Nombre:</strong>
+                <input type="text" id="nombre" name="nombre"/><br>
+                <strong>genero:</strong>
+                <input type="text" id="genero" name="genero"/><br>
+                <strong>email:</strong>
+                <input type="email" id="correo" name="correo"/>
+                <strong>telefono:</strong>
+                <input type="text" id="telefono" name="telefono"/><br>
+                <strong>ocupacion:</strong>
+                <input type="text" id="ocupacion" name="ocupacion"/><br>
+                <strong>idioma:</strong>
+                <input type="text" id="idioma" name="idioma"/><br>
+                <strong>hobbies:</strong>
+                <input type="text" id="hobbies" name="hobbies"/><br>
+                <strong>direccion:</strong>
+                <select id="direccion" name="direccion"><br>
+                    <option value="gD">Guayaquil-Duran</option>
+                    <option value="gC">Guayaquil-Centro</option>
+                    <option value="sJ">Samborondon-Las Joyas</option>
+                    <option value="mC">Manabi-Chone</option>
+                </select><br>
+                <strong>Fecha de Nacimiento</strong>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento"/>
+                <br>
+                <button id="btnAceptar" onclick="editarPerfil()">Aceptar</button>
 
-
+            </div>
+            
+        </div>
+    </main>
     
+
+
+
 
     
 </body>
