@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Narcisa Carrillo Sanchez">
+    <meta name="author" content="Narcisa Carrillo Sanchez">
     <title>formularioEditarUsuario</title>
     <style>
-         .contenedorPrincipal {
-            margin-left: 80px;
+        .contenedorPrincipal {
+            margin-left: 100px;
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            width: calc(95vw - 100px);
+            width: calc(100vw - 100px);
             padding: 2rem;
             margin: auto;
             padding-top: 20vh;
-            margin-left: 50px;
-            
+            margin-left: 300px;
         }
         .seccion {
-            background-color: #fff;
+            background-color: #65a5a5;
             border: 1px solid #e1e1e1;
             border-radius: 8px;
             padding: 20px;
@@ -32,17 +31,31 @@
             padding: 8px 12px;
             border-radius: 4px;
             margin-top: 20px;
-            margin-left: 20px;
-            margin-bottom: 20px;
             cursor: pointer;
         }
-
-       #btnAceptar:hover {
+        #btnAceptar:hover {
             background-color: #e47c7c;
             color: #fff;
         }
-
-
+        input {
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+        #direccion {
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center; /* Centra el botón horizontalmente */
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -51,39 +64,37 @@
             <div class="seccion">
                 <strong>Nombre:</strong>
                 <input type="text" id="nombre" name="nombre"/><br>
-                <strong>genero:</strong>
-                <input type="text" id="genero" name="genero"/><br>
-                <strong>email:</strong>
-                <input type="email" id="correo" name="correo"/>
-                <strong>telefono:</strong>
-                <input type="text" id="telefono" name="telefono"/><br>
-                <strong>ocupacion:</strong>
-                <input type="text" id="ocupacion" name="ocupacion"/><br>
-                <strong>idioma:</strong>
-                <input type="text" id="idioma" name="idioma"/><br>
-                <strong>hobbies:</strong>
-                <input type="text" id="hobbies" name="hobbies"/><br>
-                <strong>direccion:</strong>
-                <select id="direccion" name="direccion"><br>
+                <strong>Genero:</strong>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">M</label>
+                <input type="radio" id="femenino" name="genero" value="femenino">
+                <label for="femenino">F</label>
+                <strong style="padding-left: 65px;">Email:</strong>
+                <input type="email" id="correo" name="correo" style="width:180pt;"/><br>
+                <strong >Telefono:</strong>
+                <input type="text" id="telefono" name="telefono"/>
+                <strong style="padding-left: 25px;">Direccion:</strong>
+                <select id="direccion" name="direccion">
                     <option value="gD">Guayaquil-Duran</option>
                     <option value="gC">Guayaquil-Centro</option>
                     <option value="sJ">Samborondon-Las Joyas</option>
                     <option value="mC">Manabi-Chone</option>
                 </select><br>
-                <strong>Fecha de Nacimiento</strong>
+                <strong >Ocupacion:</strong>
+                <input type="text" id="ocupacion" name="ocupacion"/>
+                <strong style="padding-left: 25px;">Idioma:</strong>
+                <input type="text" id="idioma" name="idioma"/><br>
+                <strong>Hobbies:</strong>
+                <input type="text" id="hobbies" name="hobbies"/>
+                
+                <strong style="padding-left: 25px;">Fecha de Nacimiento</strong>
                 <input type="date" id="fechaNacimiento" name="fechaNacimiento"/>
                 <br>
-                <button id="btnAceptar" onclick="editarPerfil()">Aceptar</button>
-
+                <div class="btn-container">
+                    <button id="btnAceptar" onclick="editarPerfil()">Aceptar</button>
+                </div>
             </div>
-            
         </div>
     </main>
-    
-
-
-
-
-    
 </body>
 </html>
