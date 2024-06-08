@@ -173,7 +173,9 @@
       }
 
       .propiedad-destacada p {
-        margin-bottom: 25px;
+        margin-bottom: 0px;
+        background-color: #f0f0f0;
+
       }
 
       .testimonio {
@@ -290,6 +292,81 @@
       .usuario {
         margin-right: 2rem;
       }
+
+       /* Estilos adicionales aquí */
+       .info-adicional {
+      display: none;
+      position: relative; /* Cambio de posición relativa para permitir un posicionamiento relativo */
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 0px;
+      text-align: center;
+      box-shadow: 0 15px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+      border-radius: 10px;
+
+    }
+
+    .info-adicional p{
+      padding-bottom: 15px;
+      border-radius: 10px;
+
+    }
+
+    /* Estilos adicionales aquí */
+.propiedad-destacada {
+  width: 300px;
+  height: 306.6px; /* Ajuste de altura para mantener la relación de aspecto */
+  margin: 20px 20px 60px 20px; /* Margen para todos los lados */
+
+  padding: 0; /* Sin relleno */
+  border: 0; /* Sin borde */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.propiedad-destacada:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-35px); /* Efecto de elevación al pasar el mouse */
+}
+
+ /* Transiciones suaves para todos los elementos */
+ * {
+        transition: all 0.3s ease;
+      }
+
+      /* Efecto de desvanecimiento al mostrar la información adicional */
+      .info-adicional {
+        opacity: 0;
+      }
+
+      .propiedad-destacada:hover .info-adicional {
+        opacity: 1;
+      }
+
+      /* Efecto de desplazamiento al pasar el mouse sobre las propiedades */
+      .propiedad-destacada {
+        transform: translateY(0);
+      }
+
+      .propiedad-destacada:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Efecto de sombra al pasar el mouse sobre las propiedades */
+      .propiedad-destacada:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Transición suave al cambiar el tamaño de la sombra */
+      .propiedad-destacada {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+
+    
     </style>
     <link
       rel="stylesheet"
@@ -337,34 +414,48 @@
 
       <section class="seccion-destacada">
         <h2>Propiedades destacadas</h2>
-        <div class="propiedad-destacada">
-          <source
-            media="(max-width: 768px)"
-            srcset="assets/img/propiedad1.jpg"
-          />
+      
+        <div class="propiedad-destacada" onmouseover="mostrarInfo(this)" onmouseout="ocultarInfo(this)">
           <img src="assets/img/propiedad1.jpg" alt="Propiedad 1" />
           <h3>Casa en el campo</h3>
           <p>Precio: $1000/mes</p>
+          <div class="info-adicional">
+            <p>Habitaciones: 3<br>Baños: 2<br>Sala: Sí<br>Patio: 1<br>Garaje: 1</p>
+          </div>
         </div>
-        <div class="propiedad-destacada">
+      
+        <div class="propiedad-destacada" onmouseover="mostrarInfo(this)" onmouseout="ocultarInfo(this)">
           <img src="assets/img/propiedad2.jpg" alt="Propiedad 2" />
           <h3>Apartamento en la ciudad</h3>
           <p>Precio: $1500/mes</p>
+          <div class="info-adicional">
+            <p>Habitaciones: 2<br>Baños: 1<br>Sala: 1<br>Balcón: 1</p>
+          </div>
         </div>
-        <div class="propiedad-destacada">
+      
+        <div class="propiedad-destacada" onmouseover="mostrarInfo(this)" onmouseout="ocultarInfo(this)">
           <img src="assets/img/propiedad3.jpg" alt="Propiedad 3" />
           <h3>Habitación amueblada</h3>
           <p>Precio: $500/mes</p>
+          <div class="info-adicional">
+            <p>Habitaciones: 1<br>Baños: 1<br>Sala: 1<br>Cocina: 1</p>
+          </div>
         </div>
-        <div class="propiedad-destacada">
+      
+        <div class="propiedad-destacada" onmouseover="mostrarInfo(this)" onmouseout="ocultarInfo(this)">
           <picture>
             <img src="assets/img/propiedad4.jpg" alt="Propiedad 4" />
           </picture>
           <h3>Casa de playa</h3>
           <p>Precio: $2000/mes</p>
+          <div class="info-adicional">
+            <p>Habitaciones: 4<br>Baños: 3<br>Sala: 1<br>Piscina: 1<br>Jardín: 1</p>
+          </div>
         </div>
       </section>
-
+      
+      
+      
       <section class="valores">
         <template id="featured-property"></template>
         <h2>Conoce nuestros valores</h2>
@@ -430,6 +521,9 @@
         <br />
         <button>Registrarse</button>
       </section>
+
+
+      
     </main>
 
     <footer class="footer">
@@ -473,5 +567,19 @@
         >
       </div>
     </footer>
+
+    <script>
+      // Función para mostrar la información adicional al pasar el mouse sobre la propiedad
+      function mostrarInfo(propiedad) {
+        const infoAdicional = propiedad.querySelector('.info-adicional');
+        infoAdicional.style.display = 'block';
+      }
+  
+      // Función para ocultar la información adicional al quitar el mouse de la propiedad
+      function ocultarInfo(propiedad) {
+        const infoAdicional = propiedad.querySelector('.info-adicional');
+        infoAdicional.style.display = 'none';
+      }
+    </script>
   </body>
 </html>
