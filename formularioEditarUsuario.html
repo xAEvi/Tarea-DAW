@@ -7,18 +7,18 @@
     <title>formularioEditarUsuario</title>
     <style>
         .contenedorPrincipal {
-            margin-left: 100px;
+            margin-left: 100%;
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            width: calc(100vw - 100px);
-            padding: 2rem;
+            justify-content:center;
+            gap: 20%;
+            width: calc(95%);
+            padding: 5%;
             margin: auto;
-            padding-top: 20vh;
-            margin-left: 300px;
+            
+            
         }
         .seccion {
-            background-color: #65a5a5;
+            background-color: #65b5b1;
             border: 1px solid #e1e1e1;
             border-radius: 8px;
             padding: 20px;
@@ -39,62 +39,288 @@
         }
         input {
             padding: 6px 10px;
-            border-radius: 6px;
-            margin-top: 5px;
-            margin-left: 5px;
-            margin-bottom: 5px;
+            border-radius: 3px;
+            margin-top: 1%;
+            margin-left: 10px;
+            margin-bottom: 1px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            
         }
-        #direccion {
+        #direccion , #idioma {
             padding: 6px 10px;
-            border-radius: 6px;
-            margin-top: 5px;
-            margin-left: 5px;
-            margin-bottom: 5px;
+            border-radius: 3px;
+            margin-top: 1%;
+            margin-left: 10px;
+            margin-bottom: 1px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            
         }
         .btn-container {
             display: flex;
             justify-content: center; /* Centra el botón horizontalmente */
             margin-top: 20px;
         }
+        label{
+            font-weight: bold;
+        }
+        span{
+            color: brown;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
-    <main>
+    <form id="IngresoUser">
         <div class="contenedorPrincipal">
             <div class="seccion">
-                <strong>Nombre:</strong>
-                <input type="text" id="nombre" name="nombre"/><br>
-                <strong>Genero:</strong>
-                <input type="radio" id="masculino" name="genero" value="masculino">
-                <label for="masculino">M</label>
-                <input type="radio" id="femenino" name="genero" value="femenino">
-                <label for="femenino">F</label>
-                <strong style="padding-left: 65px;">Email:</strong>
-                <input type="email" id="correo" name="correo" style="width:180pt;"/><br>
-                <strong >Telefono:</strong>
-                <input type="text" id="telefono" name="telefono"/>
-                <strong style="padding-left: 25px;">Direccion:</strong>
-                <select id="direccion" name="direccion">
-                    <option value="gD">Guayaquil-Duran</option>
-                    <option value="gC">Guayaquil-Centro</option>
-                    <option value="sJ">Samborondon-Las Joyas</option>
-                    <option value="mC">Manabi-Chone</option>
-                </select><br>
-                <strong >Ocupacion:</strong>
-                <input type="text" id="ocupacion" name="ocupacion"/>
-                <strong style="padding-left: 25px;">Idioma:</strong>
-                <input type="text" id="idioma" name="idioma"/><br>
-                <strong>Hobbies:</strong>
-                <input type="text" id="hobbies" name="hobbies"/>
-                
-                <strong style="padding-left: 25px;">Fecha de Nacimiento</strong>
-                <input type="date" id="fechaNacimiento" name="fechaNacimiento"/>
-                <br>
+                <div>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre"/>
+                </div>
+                <div>
+                    <input type="text" id="correo" name="correo" style="width:180pt;" placeholder="Email"/>
+                </div>
+                <div>
+                    <label style="padding-left: 5px;">Genero:</label>
+                    <input type="radio" id="masculino" name="genero" value="masculino">
+                    <label for="masculino">M</label>
+                    <input type="radio" id="femenino" name="genero" value="femenino">
+                    <label for="femenino">F</label>
+                </div>
+                <div>
+                    <label style="padding-left: 5px;">Direccion:</label>
+                    <select id="direccion" name="direccion">
+                        <option value="0">Seleccione...</option>
+                        <option value="1">Guayaquil-Duran</option>
+                        <option value="2">Guayaquil-centro</option>
+                        <option value="3">Manabi-Chone</option>
+                        <option value="4">Samborondon-Las Joyas</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="tel" id="telefono" name="telefono" placeholder="telefono"/>
+                </div>
+                <div>
+                    <input type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion"/>
+                </div>
+                <div>
+                    <label style="padding-left: 5px;">Idioma:</label>
+                    <select id="idioma" name="idioma">
+                        <option value="0">Seleccione...</option>
+                        <option value="1">ingles</option>
+                        <option value="2">Espaniol</option>
+                        <option value="3">Frances</option>
+                        <option value="4">Italino</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" id="hobbies" name="hobbies" placeholder="Hobbies"/>
+                </div>
+                <div>
+                    <label style="padding-left: 5px;">Fecha de Nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento"/>
+                    <br>
+                </div>
                 <div class="btn-container">
-                    <button id="btnAceptar" onclick="editarPerfil()">Aceptar</button>
+                    <button id="btnAceptar" type="submit">Aceptar</button>
                 </div>
             </div>
         </div>
-    </main>
+    </form>
+    <script>
+        const form = document.querySelector("#IngresoUser");
+        form.addEventListener("submit", validar);
+
+        function mensaje(message, element) {
+            const parent = element.parentNode;
+            const mensajeSpan = document.createElement("span");
+            mensajeSpan.textContent = message;
+            mensajeSpan.className = "error";
+            parent.appendChild(mensajeSpan);
+        }
+
+        function limpiar() {
+            const errors = document.querySelectorAll(".error");
+            errors.forEach((error) => {
+                error.remove();
+            });
+        }
+
+        function validar(event) {
+            limpiar();
+            event.preventDefault();
+            let bandera = true;
+
+            // Recolectar elementos html
+            const txtNombre = form.nombre;
+            const txtEmail = form.correo;
+            const radGenero = form.genero;
+            const seldireccion = form.direccion;
+            const txtTelefono = form.telefono;
+            const txtOcupacion = form.ocupacion;
+            const selIdioma = form.idioma;
+            const txtHobbies = form.hobbies;
+            const dateFechaNacimiento = form.fechaNacimiento;
+
+            
+            
+
+            // Expresiones regulares
+            const noSpaces = /^\S*$/;
+            const validDomain = /^[a-zA-Z0-9._%+-]+@ug\.edu\.ec$/;
+            const num = /^[0-9]+$/;
+            const letras = /^[a-zA-Z\s]*$/;
+            const  tel = /^09\d{8}$/;
+
+            /*
+                Validaciones
+            */
+
+            // Validación de nombre
+            if (txtNombre.value === "") {
+                bandera = false;
+                mensaje("¡Ingresar nombre es obligatorio!", nombre);
+            } else if (!letras.test(txtNombre.value)) {
+                bandera = false;
+                mensaje("¡El nombre debe contener solo letras!", nombre);
+                
+            } else if (noSpaces.test(txtNombre.value)) {
+                bandera = false;
+                mensaje("¡Ingrese un nombre y un apellido.!", nombre);
+            }
+
+            // Validación de correo
+            if (txtEmail.value === "") {
+                bandera = false;
+                mensaje("¡Ingresar correo es obligatorio!", correo);
+            }else if (!validDomain.test(txtEmail.value)) {
+                bandera = false;
+                mensaje("¡Correo debe ser institucional.!", correo);
+            }
+
+            // Validación de genero
+            let sel = false;
+            for (let i = 0 ; i < radGenero.length; i++) {
+                if (radGenero[i].checked){
+                   sel = true; 
+                   let res = radGenero[i].value;
+                   break
+                }
+                
+            }
+            if (!sel){
+                bandera = false;
+                mensaje("¡Seleccione un género!", radGenero[0]);
+            }
+            
+            //validacion de direccion
+            if (seldireccion.value === null || seldireccion.value ==='0') {
+                bandera=false;
+                mensaje("¡Es obligatorio Seleccionar una dirección!", direccion);
+            } 
+          
+            //validacion de telefono
+            if (txtTelefono.value === "") {
+            success = false;
+            mensaje("¡Telefono es obligatorio!", telefono);
+            } else if (!num.test(txtTelefono.value)) {
+            success = false;
+            mensaje("¡Debe ingresar numeros!", telefono);
+            }else if(!tel.test(txtTelefono.value)){
+                success = false;
+                mensaje("¡El numero debe iniciar con 09!", telefono);
+
+            }
+   
+            //validacion de ocupacion
+            if (txtOcupacion.value === "") {
+                bandera = false;
+                mensaje("¡Ingresar ocupacion es obligatorio!", ocupacion);
+            } else if (!letras.test(txtOcupacion.value)) {
+                bandera = false;
+                mensaje("¡Debe contener solo letras!", ocupacion);
+                
+            } else if (!noSpaces.test(txtOcupacion.value)) {
+                bandera = false;
+                mensaje("¡No ingresar espacios.!", ocupacion);
+            }
+
+            //validacion de idioma
+            if ( selIdioma.value === null || selIdioma.value ==='0') {
+                bandera=false;
+                mensaje("¡Es obligatorio Seleccionar un idioma!", idioma);
+            }
+
+            //validacion de hobies
+            if (txtHobbies.value === "") {
+                bandera = false;
+                mensaje("¡Ingresar hobbies es obligatorio!", hobbies);
+            } else if (!letras.test(txtHobbies.value)) {
+                bandera = false;
+                mensaje("¡Debe contener solo letras!", hobbies);
+                
+            } else if (!noSpaces.test(txtHobbies.value)) {
+                bandera = false;
+                mensaje("¡No ingresar espacios!", hobbies);
+            }
+
+            //validacion de la fecha de nacimiento
+            var dato = dateFechaNacimiento.value;
+            var fechaNacimiento = new Date(dato);
+            var anioN = fechaNacimiento.getFullYear();
+            var fechaActual = new Date();
+            var anioA = fechaActual.getFullYear();
+            if (anioN > anioA) {
+                bandera = false;
+                mensaje("¡La fecha de nacimiento no puede ser mayor a la fecha actual!", dateFechaNacimiento);
+            }else if (anioN < 1940){
+                bandera = false;
+                mensaje("¡La fecha de nacimiento no puede ser menor a 1940!", dateFechaNacimiento);
+
+            }else if ((anioA - anioN)< 18){
+                bandera = false;
+                mensaje("¡Debes ser mayor de 18 años para registrarte!", dateFechaNacimiento);
+
+            }
+            if (!bandera) {
+                event.preventDefault();
+            }
+            
+        }
+
+        /*Validaciones KeyPress*/
+
+        // KeyPress nombre
+        form.nombre.addEventListener("keypress", function (e) {
+        if (e.target.value.length >= 25) {
+            e.preventDefault();
+        }
+        });
+        // KeyPress telefono
+        form.telefono.addEventListener("keypress", function (e) {
+        if (e.target.value.length >= 10) {
+            e.preventDefault();
+        }
+        });
+
+        // KeyPress  ocupacion 
+        form.ocupacion.addEventListener("keypress", function (e) {
+        if (e.target.value.length >= 18) {
+            e.preventDefault();
+        }
+        });
+
+        // KeyPress  hobbies 
+        form.hobbies.addEventListener("keypress", function (e) {
+        if (e.target.value.length >= 15) {
+            e.preventDefault();
+        }
+        });
+        
+
+    
+    </script>
+    
 </body>
 </html>
