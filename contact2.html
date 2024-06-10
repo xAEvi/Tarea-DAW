@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Jhon Quinto" />
     <link rel="stylesheet" href="assets/style.css" />
-    <title>Empresa - Alquila Fácil</title>
+    <title>Contacto - Alquila Fácil</title>
     <script
       src="https://kit.fontawesome.com/8b96afa7e9.js"
       crossorigin="anonymous"
@@ -43,19 +43,14 @@
         padding: 1.5rem;
         box-sizing: border-box;
         overflow: hidden;
-        transition: transform 0.3s ease;
-      }
-
-      .card:hover {
-        transform: scale(1.05);
       }
 
       .info-card {
-        width: calc(50% - 1rem);
+        width: calc(100% - 1rem);
       }
 
       .form-container {
-        width: calc(50% - 1rem);
+        width: calc(100% - 1rem);
       }
 
       .card h1,
@@ -119,7 +114,6 @@
 
       .form-container button:hover {
         background-color: #136f70;
-        transform: scale(1.05);
       }
 
       .form-container small {
@@ -151,46 +145,14 @@
         border-radius: 8px;
       }
 
-      .news-container {
-        width: calc(50% - 1rem);
-        background-color: #b2d5d1;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-sizing: border-box;
-        overflow: hidden;
-      }
-
-      .news-item {
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        box-sizing: border-box;
-        overflow-wrap: break-word;
-      }
-
-      .news-item p {
-        margin: 0.5rem 0;
-      }
-
-      .news-item strong {
-        display: block;
-        margin-top: 0.5rem;
-        color: #333;
-      }
-
       @media (max-width: 768px) {
         .info-card,
-        .form-container,
-        .news-container {
+        .form-container {
           width: 100%;
           margin: 0 0.5rem;
         }
 
-        .map-container,
-        .news-container {
+        .map-container {
           margin: 2rem 0.5rem;
           padding: 1rem;
         }
@@ -342,26 +304,6 @@
           width: 100%;
         }
       }
-
-      .contact-button {
-        display: block;
-        width: calc(50% - 1rem);
-        margin: 2rem auto;
-        padding: 0.75rem;
-        border: none;
-        border-radius: 5px;
-        background-color: #19828c;
-        color: #fff;
-        font-size: 1rem;
-        cursor: pointer;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-
-      .contact-button:hover {
-        background-color: #136f70;
-        transform: scale(1.05);
-      }
     </style>
   </head>
   <body>
@@ -378,14 +320,11 @@
         <a href="index.html"
           ><img class="icon" src="assets/img/home.svg" alt="Home"
         /></a>
-        <a href="filterSearch.html"
-          ><img class="icon" src="assets/img/search.svg" alt="Search"
-        /></a>
-        <a href="favorites.html"
-          ><img class="icon" src="assets/img/heart.svg" alt="Favorites"
+        <a href="search.html"
+          ><img class="icon" src="assets/img/squares.svg" alt="Search"
         /></a>
         <a href="contact.html"
-          ><img class="icon" src="assets/img/mail.svg" alt="Mail"
+          ><img class="icon" src="assets/img/contact.svg" alt="Contact"
         /></a>
       </nav>
 
@@ -400,83 +339,49 @@
     </div>
     <div class="container">
       <div class="cards-container">
-        <!-- Sección de Contáctanos -->
-        <div class="card info-card">
-          <h1>Contáctanos</h1>
-          <p><strong>Teléfono:</strong></p>
-          <p>+59398542145</p>
-          <div class="options-container">
-            <div class="option">
-              <p>
-                <strong>Soporte Comercial<br /></strong>
-                Nuestro team estará encantado de atenderlo, pues este está
-                disponible las 24 horas del día para resolver cualquier duda o
-                inquietud que posea.
-              </p>
+        <!-- Tarjeta de formulario de contacto -->
+        <div class="card form-container">
+          <h2>¿Necesitas más información? Háznoslo Saber!</h2>
+          <h3>Ingresa tu información y nosotros te contactaremos</h3>
+          <form id="contactForm" action="#" method="post">
+            <div class="row">
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="Nombre"
+              />
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                placeholder="Apellido"
+              />
             </div>
-            <div class="option">
-              <p>
-                <strong>Sugerencias<br /></strong>
-                Nuestra meta es ser el mejor sistema que te facilite alquilar
-                cualquier propiedad para garantizar que tengas la mejor
-                experiencia, para lograrlo, apreciamos cualquier tipo de opinión
-                y sugerencias que puedas tener.
-              </p>
-            </div>
-            <div class="option">
-              <p>
-                <strong>Para todo lo demás...<br /></strong>
-                Si deseas ponerte en contacto con nosotros de manera más
-                personal, para temas de prensa, información o nuestra
-                organización, contáctanos en atencion@alquilafacil.com
-              </p>
-            </div>
-          </div>
+            <input
+              id="email"
+              name="email"
+              placeholder="Correo Electrónico"
+            />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Número de Teléfono"
+            />
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Mensaje Adicional"
+            ></textarea>
+            <button type="submit">Enviar</button>
+            <small
+              >Al enviar el mensaje acepta nuestros términos de servicio y
+              condiciones</small
+            >
+          </form>
         </div>
-
-        <!-- Tarjeta de Noticias y Eventos -->
-        <div class="card news-container">
-          <h1>Noticias y Eventos</h1>
-          <div class="news-item">
-            <strong>Inauguración de Nuevas Oficinas<br /></strong>
-            <p>
-              Nos complace anunciar la apertura de nuestras nuevas oficinas en
-              Quito. Ven a visitarnos y conoce más sobre nuestros servicios.
-            </p>
-            <strong>Fecha: 15 de Julio de 2024</strong>
-          </div>
-          <div class="news-item">
-            <strong>Webinar sobre Alquiler de propiedades<br /></strong>
-            <p>
-              Únete a nuestro webinar gratuito donde discutiremos las mejores
-              prácticas para alquilar tu propiedad de manera efectiva.
-            </p>
-            <strong>Fecha: 20 de Junio de 2024</strong>
-          </div>
-          <div class="news-item">
-            <strong>Actualización de la Plataforma<br /></strong>
-            <p>
-              Hemos lanzado una nueva actualización para mejorar la experiencia
-              del usuario y añadir nuevas funcionalidades. ¡Descúbrela ahora!
-            </p>
-            <strong>Fecha: 1 de Junio de 2024</strong>
-          </div>
-        </div>
-      </div>
-
-      <!-- Botón de contacto adicional -->
-      <a href="contact2.html" class="contact-button" style="text-decoration: none;">
-        Nosotros podemos contactarte si lo necesitas!
-      </a>
-
-      <!-- Mapa -->
-      <div class="map-container">
-        <h3>Encuéntranos en:</h3>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345094196!2d144.9537363158444!3d-37.8162797420217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5770f0c3c3a3a49!2sFlinders%20St%20Station!5e0!3m2!1ses!2sau!4v1586889511345!5m2!1ses!2sau"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
       </div>
     </div>
     <footer class="footer" style="display: block">
@@ -521,15 +426,62 @@
       </div>
     </footer>
     <script>
-      // Efecto Hover/Zoom
-      document.querySelectorAll('.card, .contact-button').forEach(element => {
-        element.addEventListener('mouseover', () => {
-          element.style.transform = 'scale(1.05)';
-        });
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-        element.addEventListener('mouseout', () => {
-          element.style.transform = 'scale(1)';
-        });
+        var firstname = document.getElementById('firstname').value.trim();
+        var lastname = document.getElementById('lastname').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var phone = document.getElementById('phone').value.trim();
+        var message = document.getElementById('message').value.trim();
+        var valid = true;
+
+        if (firstname === '') {
+          alert('Por favor, ingrese su nombre.');
+          valid = false;
+        }
+
+        if (lastname === '') {
+          alert('Por favor, ingrese su apellido.');
+          valid = false;
+        }
+
+        if (email === '') {
+          alert('Por favor, ingrese su correo electrónico.');
+          valid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+          alert('Por favor, ingrese un correo electrónico válido.');
+          valid = false;
+        }
+
+        if (phone === '') {
+          alert('Por favor, ingrese su número de teléfono.');
+          valid = false;
+        } else if (!/^\d{10}$/.test(phone)) {
+          alert('Por favor, ingrese un número de teléfono válido (10 dígitos).');
+          valid = false;
+        }
+
+        if (message === '') {
+          alert('Por favor, ingrese un mensaje.');
+          valid = false;
+        }
+
+        if (valid) {
+          alert('Formulario enviado con éxito!');
+          this.submit();
+        }
+      });
+
+      // Hover/Zoom
+      const submitButton = document.querySelector('.form-container button');
+
+      submitButton.addEventListener('mouseenter', () => {
+        submitButton.style.transform = 'scale(1.1)';
+      });
+
+      submitButton.addEventListener('mouseleave', () => {
+        submitButton.style.transform = 'scale(1)';
       });
     </script>
   </body>
