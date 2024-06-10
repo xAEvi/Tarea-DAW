@@ -407,8 +407,18 @@
         <div class="price-range-container">
           <h4>Rango de Precios</h4>
           <div class="min-max">
-            <input type="number" name="minValue" placeholder="Min" />
-            <input type="number" name="maxValue" placeholder="Max" />
+            <input
+              type="number"
+              id="minPrice"
+              name="minValue"
+              placeholder="Min"
+            />
+            <input
+              type="number"
+              id="maxPrice"
+              name="maxValue"
+              placeholder="Max"
+            />
           </div>
         </div>
 
@@ -416,13 +426,13 @@
           <div class="bath-container">
             <label>
               Bathroom
-              <input type="number" name="minValue" />
+              <input type="number" id="minBath" name="minValue" />
             </label>
           </div>
           <div class="bedroom-container">
             <label>
               Bedroom
-              <input type="number" name="maxValue" />
+              <input type="number" id="minBedroom" name="bedroomsMin" />
             </label>
           </div>
         </div>
@@ -446,7 +456,7 @@
           </div>
         </div>
 
-        <button class="apply">Aplicar Cambios</button>
+        <button id="applyFilter" class="apply">Aplicar Cambios</button>
       </div>
       <div class="right-container">
         <div class="search-container">
@@ -490,7 +500,7 @@
             </div>
 
             <div class="tags">
-              <h2 style="color: #e47c7c">$2,123</h2>
+              <h2 id="app-price" style="color: #e47c7c">$5,343</h2>
             </div>
             <div class="description">
               <h4>Casa Moderna</h4>
@@ -499,7 +509,7 @@
             <div class="icons">
               <div class="app-icons">
                 <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
-                <h5>3</h5>
+                <h5 id="bed-count">5</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -507,7 +517,7 @@
                   src="assets/img/bath.svg"
                   alt="Bath"
                 />
-                <h5>2</h5>
+                <h5 id="bath-count">4</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -538,7 +548,7 @@
             </div>
 
             <div class="tags">
-              <h2 style="color: #e47c7c">$2,123</h2>
+              <h2 id="app-price" style="color: #e47c7c">$1,449</h2>
             </div>
             <div class="description">
               <h4>Casa Moderna</h4>
@@ -547,7 +557,7 @@
             <div class="icons">
               <div class="app-icons">
                 <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
-                <h5>3</h5>
+                <h5 id="bed-count">2</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -555,7 +565,7 @@
                   src="assets/img/bath.svg"
                   alt="Bath"
                 />
-                <h5>2</h5>
+                <h5 id="bath-count">2</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -586,7 +596,7 @@
             </div>
 
             <div class="tags">
-              <h2 style="color: #e47c7c">$2,123</h2>
+              <h2 id="app-price" style="color: #e47c7c">$3,123</h2>
             </div>
             <div class="description">
               <h4>Casa Moderna</h4>
@@ -595,7 +605,7 @@
             <div class="icons">
               <div class="app-icons">
                 <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
-                <h5>3</h5>
+                <h5 id="bed-count">3</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -603,7 +613,7 @@
                   src="assets/img/bath.svg"
                   alt="Bath"
                 />
-                <h5>2</h5>
+                <h5 id="bath-count">2</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -634,7 +644,7 @@
             </div>
 
             <div class="tags">
-              <h2 style="color: #e47c7c">$2,123</h2>
+              <h2 id="app-price" style="color: #e47c7c">$2,123</h2>
             </div>
             <div class="description">
               <h4>Casa Moderna</h4>
@@ -643,7 +653,7 @@
             <div class="icons">
               <div class="app-icons">
                 <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
-                <h5>3</h5>
+                <h5 id="bed-count">1</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -651,7 +661,7 @@
                   src="assets/img/bath.svg"
                   alt="Bath"
                 />
-                <h5>2</h5>
+                <h5 id="bath-count">2</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -682,7 +692,7 @@
             </div>
 
             <div class="tags">
-              <h2 style="color: #e47c7c">$2,123</h2>
+              <h2 id="app-price" style="color: #e47c7c">$4,543</h2>
             </div>
             <div class="description">
               <h4>Casa Moderna</h4>
@@ -691,7 +701,7 @@
             <div class="icons">
               <div class="app-icons">
                 <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
-                <h5>3</h5>
+                <h5 id="bed-count">4</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -699,7 +709,7 @@
                   src="assets/img/bath.svg"
                   alt="Bath"
                 />
-                <h5>2</h5>
+                <h5 id="bath-count">3</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -730,7 +740,7 @@
             </div>
 
             <div class="tags">
-              <h2 style="color: #e47c7c">$2,123</h2>
+              <h2 id="app-price" style="color: #e47c7c">$1,923</h2>
             </div>
             <div class="description">
               <h4>Casa Moderna</h4>
@@ -739,7 +749,7 @@
             <div class="icons">
               <div class="app-icons">
                 <img style="height: 25px" src="assets/img/bed.svg" alt="Bed" />
-                <h5>3</h5>
+                <h5 id="bed-count">2</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -747,7 +757,7 @@
                   src="assets/img/bath.svg"
                   alt="Bath"
                 />
-                <h5>2</h5>
+                <h5 id="bath-count">1</h5>
               </div>
               <div class="app-icons">
                 <img
@@ -820,6 +830,49 @@
           }
         });
       });
+
+      document
+        .getElementById("applyFilter")
+        .addEventListener("click", function () {
+          // Obtener los valores de los campos de entrada
+          let minPrice = document.getElementById("minPrice").value;
+          const minBath = document.getElementById("minBath").value;
+          const minBedroom = document.getElementById("minBedroom").value;
+          let maxPrice = document.getElementById("maxPrice").value;
+
+          // Filtrar los apartamentos según los criterios
+          const appartments = document.querySelectorAll(".apparment");
+          appartments.forEach((appartment) => {
+            const priceText = appartment.querySelector("#app-price").innerText;
+            const price = parseFloat(
+              priceText.replace("$", "").replace(",", "")
+            );
+            const bath = parseInt(
+              appartment.querySelector("#bath-count").innerText
+            );
+            const bedroom = parseInt(
+              appartment.querySelector("#bed-count").innerText
+            );
+
+            if (minPrice === "") {
+              minPrice = -Infinity;
+            }
+
+            if (maxPrice === "") {
+              maxPrice = Infinity;
+            }
+            if (
+              price >= parseFloat(minPrice) &&
+              price <= parseFloat(maxPrice) &&
+              bath >= minBath &&
+              bedroom >= minBedroom
+            ) {
+              appartment.style.display = "block";
+            } else {
+              appartment.style.display = "none";
+            }
+          });
+        });
     </script>
   </body>
 </html>
