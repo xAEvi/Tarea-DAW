@@ -1,319 +1,487 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="Walter Alejandro Duchi Rivera">
-  <title>Formulario de Reporte de Problemas</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #b2d5d1;
-    }
-
-    h1 {
-      text-align: center;
-      color: #19828d;
-    }
-
-    .contenedor-formulario {
-      max-width: 800px;
-      margin: 0 auto;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 12px;
-      background-color: #17415a;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    fieldset {
-      margin-bottom: 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      background-color: #f2f2f2;
-    }
-
-    legend {
-      font-weight: bold;
-      padding: 5px 10px;
-      background-color: #b2d5d1;
-      border-radius: 5px;
-      color: #17415a;
-    }
-
-    .campo-formulario {
-      margin-bottom: 15px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #17415a;
-    }
-
-    .required-asterisk {
-      color: red;
-      margin-left: 5px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
-      width: 98%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      background-color: #f2f2f2;
-    }
-
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      background-color: #f2f2f2;
-    }
-
-    .radio-buttons {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    label[for] {
-      cursor: pointer;
-    }
-
-    input[type="checkbox"] {
-      margin-right: 10px;
-    }
-
-    input[type="file"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      background-color: #f2f2f2;
-    }
-
-    button[type="submit"] {
-      background-color: #19828d;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #17788d;
-    }
-
-    .inline-block {
-      display: inline-block;
-      margin-right: 10px;
-      vertical-align: top;
-    }
-
-    .inline-label {
-      display: inline-block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #17415a;
-    }
-    
-    .boton-enviar {
-      text-align: right;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="author" content="Walter Alejandro Duchi Rivera">
+    <title>Formulario de Reporte de Problemas</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://kit.fontawesome.com/8b96afa7e9.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #b2d5d1;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #19828d;
+        }
+        
+        .contenedor-formulario {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #17415a;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        fieldset {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+        }
+        
+        legend {
+            font-weight: bold;
+            padding: 5px 10px;
+            background-color: #b2d5d1;
+            border-radius: 5px;
+            color: #17415a;
+        }
+        
+        .campo-formulario {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #17415a;
+        }
+        
+        .required-asterisk {
+            color: red;
+            margin-left: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 98%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f2f2f2;
+        }
+        
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f2f2f2;
+        }
+        
+        .radio-buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        label[for] {
+            cursor: pointer;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f2f2f2;
+        }
+        
+        button[type="submit"] {
+            background-color: #19828d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #17788d;
+        }
+        
+        .inline-block {
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+        
+        .inline-label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #17415a;
+        }
+        
+        .boton-enviar {
+            text-align: right;
+        }
+        /* Sidebar styles */
+        
+        @media (max-width: 775px) {
+            main {
+                padding: 1rem;
+                display: flex;
+                justify-content: center;
+                height: auto;
+            }
+        }
+        
+        .footer {
+            width: calc(100vw - 100px);
+            float: right;
+        }
+        
+        #main-icon {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        
+        #main-icon img {
+            width: 50px;
+        }
+        
+        .icon {
+            margin: auto;
+            width: 30px;
+        }
+        
+        #sidenav {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        
+        #sidenav a {
+            display: flex;
+            height: 50px;
+        }
+        
+        #sidenav a:hover {
+            background-color: #19828c;
+        }
+        
+        .sidebar {
+            position: fixed;
+            background-color: #30616c;
+            height: 100%;
+            width: 100px;
+            float: left;
+            padding: 50px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+        }
+        
+        .user {
+            margin-top: auto;
+        }
+        
+        .user:hover {
+            cursor: pointer;
+        }
+        
+        .user img {
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        
+        @media (max-width: 1130px) {
+            .search-bar input::placeholder {
+                opacity: 0;
+            }
+            .sidebar {
+                position: relative;
+                float: none;
+                width: 100%;
+                height: 100px;
+                flex-direction: row;
+                padding: 0 1rem;
+                align-items: center;
+                justify-content: space-between;
+            }
+            #sidenav {
+                flex-direction: row;
+            }
+            #main-icon {
+                margin-bottom: 0;
+                width: auto;
+            }
+            .user {
+                margin: 0;
+            }
+            .footer {
+                width: 100%;
+            }
+        }
+        
+        .contenedor-formulario,
+        nav,
+        main,
+        footer {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        body {
+            overflow-x: auto;
+        }
+    </style>
 </head>
 
 
 <body>
+    <div class="sidebar">
+        <header>
+            <img style="width: 65px" id="main-icon" src="assets/img/logo.png" alt="Icon" />
+        </header>
+        <nav id="sidenav">
+            <a href="index.html"><img class="icon" src="assets/img/home.svg" alt="Home" /></a>
+            <a href="search.html"><img class="icon" src="assets/img/squares.svg" alt="Search" /></a>
+            <a href="contact.html"><img class="icon" src="assets/img/contact.svg" alt="Contact" /></a>
+        </nav>
+
+        <div class="user">
+            <a href="vistaUser.html"><img src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg" alt="User" style="height: 50px" /></a>
+        </div>
+    </div>
+    <nav></nav>
+
     <h1>Formulario de Reporte de Problemas</h1>
-  
-    <section class="contenedor-formulario">
-      <form id="formulario-problemas">
-        <fieldset>
-          <legend>Información del Problema</legend>
-  
-          <div class="campo-formulario">
-            <label for="tipo-problema">Tipo de problema:<span class="required-asterisk">*</span></label>
-            <select id="tipo-problema" name="tipo-problema">
+
+    <main>
+        <section class="contenedor-formulario">
+            <form id="formulario-problemas">
+                <fieldset>
+                    <legend>Información del Problema</legend>
+
+                    <div class="campo-formulario">
+                        <label for="tipo-problema">Tipo de problema:<span class="required-asterisk">*</span></label>
+                        <select id="tipo-problema" name="tipo-problema">
               <option value="">Seleccione una opción</option>
               <option value="electrico">Eléctrico</option>
               <option value="plomeria">Plomería</option>
               <option value="estructura">Estructural</option>
               <option value="otro">Otro</option>
             </select>
-            <br><br>
-          </div>
-  
-          <div class="campo-formulario otro-problema" style="display: none;">
-            <label for="otro-problema">Especifique otro problema:<span class="required-asterisk">*</span></label>
-            <input type="text" id="otro-problema" name="otro-problema">
-          </div>
-  
-          <div class="campo-formulario">
-            <label for="descripcion">Descripción del problema:<span class="required-asterisk">*</span></label>
-            <textarea id="descripcion" name="descripcion" rows="5" cols="50" maxlength="500"></textarea>
-          </div>
-  
-        </fieldset>
-  
-        <fieldset>
-          <legend>Detalles del Problema</legend>
-            
-          <div class="campo-formulario">
-            <label for="gravedad">Gravedad del problema:<span class="required-asterisk">*</span></label>
-            <div>
-              <div class="inline-block">
-                <input type="radio" id="gravedad-leve" name="gravedad" value="leve">
-                <label for="gravedad-leve" class="inline-label">Leve</label>
-              </div>
-              <div class="inline-block">
-                <input type="radio" id="gravedad-media" name="gravedad" value="media">
-                <label for="gravedad-media" class="inline-label">Media</label>
-              </div>
-              <div class="inline-block">
-                <input type="radio" id="gravedad-grave" name="gravedad" value="grave">
-                <label for="gravedad-grave" class="inline-label">Grave</label>
-              </div>
-            </div>
-          </div>
-          
-          <div class="campo-formulario">
-            <label for="urgencia">Urgencia del problema:</label>
-            <div class="inline-block">
-              <input type="checkbox" id="urgencia" name="urgencia" class="mr-10">
-              <span class="text-gray-600">(Marque con un visto si es urgente su caso)</span>
-            </div>
-          </div>
-          
-          <div class="campo-formulario">
-            <label for="fecha-hora-observacion">Fecha y hora en que se observó el problema por primera vez:<span class="required-asterisk">*</span></label>
-            <input type="datetime-local" id="fecha-hora-observacion" name="fecha-hora-observacion">
-            <br><br>
-          </div>
-  
-          <div class="campo-formulario">
-            <label for="ubicacion-problema">Ubicación del problema (habitación, piso, etc.):<span class="required-asterisk">*</span></label>
-            <input type="text" id="ubicacion-problema" name="ubicacion-problema">
-            <br><br>
-          </div>
+                        <br><br>
+                    </div>
 
-          <div class="campo-formulario">
-            <label for="impacto-calidad-vida">¿En qué medida este problema afecta su calidad de vida?:<span class="required-asterisk">*</span></label>
-            <div>
-              <div class="inline-block">
-                <input type="radio" id="impacto-minimo" name="impacto-calidad-vida" value="minimo">
-                <span for="impacto-minimo" class="inline-label">Mínimo (no afecta significativamente mi vida diaria)</span>
-              </div>
-              <div class="inline-block">
-                <input type="radio" id="impacto-moderado" name="impacto-calidad-vida" value="moderado">
-                <span for="impacto-moderado" class="inline-label">Moderado (afecta algunas actividades diarias)</span>
-              </div>
-              <div class="inline-block">
-                <input type="radio" id="impacto-severo" name="impacto-calidad-vida" value="severo">
-                <span for="impacto-severo" class="inline-label">Severo (afecta considerablemente mi vida diaria)</span>
-              </div>
-            </div>
-          </div><br>
-          
-          <div class="campo-formulario">
-            <label for="sugerencias-prevencion">Sugerencias para prevenir problemas similares en el futuro:</label>
-            <textarea id="sugerencias-prevencion" name="sugerencias-prevencion" rows="5" cols="50"></textarea>
-          </div>
-        </fieldset>
+                    <div class="campo-formulario otro-problema" style="display: none;">
+                        <label for="otro-problema">Especifique otro problema:<span class="required-asterisk">*</span></label>
+                        <input type="text" id="otro-problema" name="otro-problema">
+                    </div>
 
-        <div class="boton-enviar">
-          <button type="submit" style="font-weight: bold;">Enviar reporte</button>
+                    <div class="campo-formulario">
+                        <label for="descripcion">Descripción del problema:<span class="required-asterisk">*</span></label>
+                        <textarea id="descripcion" name="descripcion" rows="5" cols="50" maxlength="500"></textarea>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalles del Problema</legend>
+
+                    <div class="campo-formulario">
+                        <label for="gravedad">Gravedad del problema:<span class="required-asterisk">*</span></label>
+                        <div>
+                            <div class="inline-block">
+                                <input type="radio" id="gravedad-leve" name="gravedad" value="leve">
+                                <label for="gravedad-leve" class="inline-label">Leve</label>
+                            </div>
+                            <div class="inline-block">
+                                <input type="radio" id="gravedad-media" name="gravedad" value="media">
+                                <label for="gravedad-media" class="inline-label">Media</label>
+                            </div>
+                            <div class="inline-block">
+                                <input type="radio" id="gravedad-grave" name="gravedad" value="grave">
+                                <label for="gravedad-grave" class="inline-label">Grave</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="urgencia">Urgencia del problema:</label>
+                        <div class="inline-block">
+                            <input type="checkbox" id="urgencia" name="urgencia" class="mr-10">
+                            <span class="text-gray-600">(Marque con un visto si es urgente su caso)</span>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="fecha-hora-observacion">Fecha y hora en que se observó el problema por primera vez:<span class="required-asterisk">*</span></label>
+                        <input type="datetime-local" id="fecha-hora-observacion" name="fecha-hora-observacion">
+                        <br><br>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="ubicacion-problema">Ubicación del problema (habitación, piso, etc.):<span class="required-asterisk">*</span></label>
+                        <input type="text" id="ubicacion-problema" name="ubicacion-problema">
+                        <br><br>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="impacto-calidad-vida">¿En qué medida este problema afecta su calidad de vida?:<span class="required-asterisk">*</span></label>
+                        <div>
+                            <div class="inline-block">
+                                <input type="radio" id="impacto-minimo" name="impacto-calidad-vida" value="minimo">
+                                <span for="impacto-minimo" class="inline-label">Mínimo (no afecta significativamente mi vida diaria)</span>
+                            </div>
+                            <div class="inline-block">
+                                <input type="radio" id="impacto-moderado" name="impacto-calidad-vida" value="moderado">
+                                <span for="impacto-moderado" class="inline-label">Moderado (afecta algunas actividades diarias)</span>
+                            </div>
+                            <div class="inline-block">
+                                <input type="radio" id="impacto-severo" name="impacto-calidad-vida" value="severo">
+                                <span for="impacto-severo" class="inline-label">Severo (afecta considerablemente mi vida diaria)</span>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="campo-formulario">
+                        <label for="sugerencias-prevencion">Sugerencias para prevenir problemas similares en el futuro:</label>
+                        <textarea id="sugerencias-prevencion" name="sugerencias-prevencion" rows="5" cols="50"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="boton-enviar">
+                    <button type="submit" style="font-weight: bold;">Enviar reporte</button>
+                </div>
+            </form>
+        </section>
+        <br><br>
+    </main>
+
+
+    <footer class="footer" style="display: block">
+        <div class="grupo1">
+            <div class="box">
+                <figure>
+                    <a href="index.html">
+                        <img src="assets/img/logo.png" alt="Logo_empresa" />
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Sobre Nosotros</h2>
+                <p>
+                    En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler de propiedades, ya sean departamentos, casas, o cualquier otro tipo de inmueble. Nuestra misión es conectar de manera efectiva a propietarios e inquilinos, brindando soluciones prácticas
+                    y seguras para ambas partes.
+                </p>
+                <p>
+                    Nuestro equipo está comprometido en ofrecer un servicio de alta calidad, nos esforzamos por simplificar el proceso de búsqueda, alquiler y gestión de propiedades, asegurando una experiencia satisfactoria para todos nuestros usuarios.
+                </p>
+            </div>
+            <div class="box">
+                <h2>Siguenos en:</h2>
+                <div class="Redes">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                </div>
+            </div>
         </div>
-        
-      </form>
-    </section>
-
+        <div class="grupo2">
+            <small>&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
+    
     <script>
-      const tipoProblemaSelect = document.getElementById('tipo-problema');
-      const otroProblemaInput = document.getElementById('otro-problema');
-      const otroProblemaDiv = document.querySelector('.otro-problema'); 
-      const formulario = document.getElementById('formulario-problemas');
+        const tipoProblemaSelect = document.getElementById('tipo-problema');
+        const otroProblemaInput = document.getElementById('otro-problema');
+        const otroProblemaDiv = document.querySelector('.otro-problema');
+        const formulario = document.getElementById('formulario-problemas');
 
-      tipoProblemaSelect.addEventListener('change', () => {
-          if (tipoProblemaSelect.value === 'otro') {
-              otroProblemaDiv.style.display = 'block'; 
-              otroProblemaInput.disabled = false;
-              otroProblemaInput.required = true;
-          } else {
-              otroProblemaDiv.style.display = 'none'; 
-              otroProblemaInput.disabled = true;
-              otroProblemaInput.required = false;
-          }
-      });
+        tipoProblemaSelect.addEventListener('change', () => {
+            if (tipoProblemaSelect.value === 'otro') {
+                otroProblemaDiv.style.display = 'block';
+                otroProblemaInput.disabled = false;
+                otroProblemaInput.required = true;
+            } else {
+                otroProblemaDiv.style.display = 'none';
+                otroProblemaInput.disabled = true;
+                otroProblemaInput.required = false;
+            }
+        });
 
-      formulario.addEventListener('submit', function(event) {
-          event.preventDefault(); 
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-          const tipoProblema = tipoProblemaSelect.value;
-          if (!tipoProblema) {
-              alert('Por favor, seleccione el tipo de problema.');
-              return;
-          }
+            const tipoProblema = tipoProblemaSelect.value;
+            if (!tipoProblema) {
+                alert('Por favor, seleccione el tipo de problema.');
+                return;
+            }
 
-          if (tipoProblema === 'otro') {
-              const otroProblema = otroProblemaInput.value.trim();
-              if (!otroProblema) {
-                  alert('Por favor, especifique el otro problema.');
-                  return;
-              }
-          }
+            if (tipoProblema === 'otro') {
+                const otroProblema = otroProblemaInput.value.trim();
+                if (!otroProblema) {
+                    alert('Por favor, especifique el otro problema.');
+                    return;
+                }
+            }
 
-          const descripcion = document.getElementById('descripcion').value.trim();
-          if (!descripcion) {
-              alert('Por favor, ingrese una descripción del problema.');
-              return;
-          }
+            const descripcion = document.getElementById('descripcion').value.trim();
+            if (!descripcion) {
+                alert('Por favor, ingrese una descripción del problema.');
+                return;
+            }
 
-          const gravedad = document.querySelector('input[name="gravedad"]:checked');
-          if (!gravedad) {
-              alert('Por favor, seleccione la gravedad del problema.');
-              return;
-          }
+            const gravedad = document.querySelector('input[name="gravedad"]:checked');
+            if (!gravedad) {
+                alert('Por favor, seleccione la gravedad del problema.');
+                return;
+            }
 
-          const fechaHoraObservacion = document.getElementById('fecha-hora-observacion').value;
-          if (!fechaHoraObservacion) {
-              alert('Por favor, ingrese la fecha y hora en que se observó el problema por primera vez.');
-              return;
-          }
+            const fechaHoraObservacion = document.getElementById('fecha-hora-observacion').value;
+            if (!fechaHoraObservacion) {
+                alert('Por favor, ingrese la fecha y hora en que se observó el problema por primera vez.');
+                return;
+            }
 
-          const ubicacionProblema = document.getElementById('ubicacion-problema').value.trim();
-          if (!ubicacionProblema) {
-              alert('Por favor, ingrese la ubicación del problema.');
-              return;
-          }
+            const ubicacionProblema = document.getElementById('ubicacion-problema').value.trim();
+            if (!ubicacionProblema) {
+                alert('Por favor, ingrese la ubicación del problema.');
+                return;
+            }
 
-          const impactoCalidadVida = document.querySelector('input[name="impacto-calidad-vida"]:checked');
-          if (!impactoCalidadVida) {
-              alert('Por favor, seleccione el impacto en la calidad de vida.');
-              return;
-          }
+            const impactoCalidadVida = document.querySelector('input[name="impacto-calidad-vida"]:checked');
+            if (!impactoCalidadVida) {
+                alert('Por favor, seleccione el impacto en la calidad de vida.');
+                return;
+            }
 
-          alert('Formulario enviado con éxito!');
-          formulario.submit();
-      });
-  </script>
+            alert('Formulario enviado con éxito!');
+            formulario.submit();
+        });
+    </script>
 </body>
+
 </html>
