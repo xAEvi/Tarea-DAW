@@ -83,7 +83,7 @@
 
       /* Selector de agrupacion */
       .btnCambios,
-      .editarFoto {
+      .cambiarPerfil {
         border: 1px solid #e47c;
         background-color: #fff;
         color: #e47c7c;
@@ -94,7 +94,7 @@
 
       /* Selector de pseudoclase */
       .btnCambios:hover,
-      .editarFoto:hover {
+      .cambiarPerfil:hover {
         background-color: #e47c7c;
         color: #fff;
       }
@@ -109,7 +109,7 @@
       }
 
       /* Selector de clase */
-      .fotoUser {
+      #fotoUser {
         display: flex;
         align-items: center;
         gap: 30px;
@@ -189,7 +189,7 @@
       }
 
       /* Selector de clase */
-      .editarFoto {
+      .cambiarPerfil {
         padding: 5px 10px;
         font-size: 0.8rem;
       }
@@ -272,10 +272,8 @@
         border-radius: 50%;
         border: 1px solid black;
       }
-      #iframe {
-        display: none; /* Inicialmente oculto */
-      }
-      #perfil:hover + #iframe {
+    
+      #perfil:hover {
         display: block;
       }
 
@@ -374,46 +372,46 @@
         <div class="seccion usuarioInfo">
           <div class="titulo">
             <h2>Perfil Usuario</h2>
-            <a class="btnCambios" href="#">Editar Perfil</a>
+            <a class="btnCambios" href="formularioEditarUsuario.html">Editar Perfil</a>
           </div>
 
           <div class="contenedorSecciones">
-            <div class="fotoUser">
+            <div id="fotoUser">
               <img
                 id="perfil"
                 src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
                 alt="Usuario"
               />
-              <iframe id="iframe" src="assets/img/pq2.jpg"></iframe>
-              <a class="editarFoto" href="#">Cambiar Foto</a>
+              <button class="cambiarPerfil"  onclick="btnPerfil()" >Cambiar Perfil</button>
+              
             </div>
             <div class="informacion">
-              <p class="izq"><strong>Nombre:</strong> Daniela Garcia Vargas</p>
+              <p class="izq" id="nom"><strong>Nombre:</strong> Daniela Garcia Vargas</p>
               <br />
-              <p class="izq">
+              <p class="izq" id="cor">
                 <strong>Correo:</strong><i><u>Danielagv@gmail.com</u></i>
               </p>
               <br />
-              <p class="izq"><strong>Genero:</strong> Femenino</p>
+              <p class="izq" id="gen"><strong>Genero:</strong> Femenino</p>
               <br />
-              <p class="izq"><strong>Telefono:</strong> 0923456789</p>
+              <p class="izq" id="tel"><strong>Telefono:</strong> 0923456789</p>
               <br />
-              <p class="izq"><strong>Ocupacion:</strong> Abogada</p>
+              <p class="izq" id="ocu"><strong>Ocupacion:</strong> Abogada</p>
               <br />
-              <p class="izq"><strong>Hobbies:</strong> Danza Contemporanea</p>
+              <p class="izq" id="hob"><strong>Hobbies:</strong> Danza Contemporanea</p>
               <br />
-              <p class="izq"><strong>Idioma:</strong> Español e Ingles</p>
+              <p class="izq" id="idi"><strong>Idioma:</strong> Español e Ingles</p>
               <br />
-              <p class="izq"><strong>Direccion:</strong> Guayaquil - Duran</p>
+              <p class="izq" id="dir"><strong>Direccion:</strong> Guayaquil - Duran</p>
               <br />
-              <p class="izq">
+              <p class="izq" id="fna">
                 <strong>Fecha de Nacimiento:</strong
                 ><time datetime="2002-05-02">02 de mayo del 2002</time>
               </p>
               <br />
             </div>
             <div id="redesSociales">
-              <a
+              <a id="facebook"
                 href="https://www.facebook.com/daniela.garciavargas.54"
                 target="_blank"
                 ><svg
@@ -429,7 +427,7 @@
                   />
                 </svg>
               </a>
-              <a
+              <a id="instagram"
                 href="https://www.instagram.com/garciavargasdaniela?igsh=MTlxMDR0b2p2eHpzMQ=="
                 target="_blank"
                 ><svg
@@ -445,7 +443,8 @@
                   />
                 </svg>
               </a>
-              <a href="https://www.whatsapp.com/download/" target="_blank"
+              <a id="whatsapp"
+                href="https://www.whatsapp.com/download/" target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -459,7 +458,7 @@
                   />
                 </svg>
               </a>
-              <a
+              <a id="bi-linkedin"
                 href="https://www.linkedin.com/login/es?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"
                 target="_blank"
                 ><svg
@@ -486,12 +485,12 @@
           <div class="contenedorSecciones">
             <div class="alquiler">
               <img src="assets/img/descarga(2).jpg" alt="casa" />
-              <div class="alquiler-informacion">
-                <p><strong>Guayaquil-Duran</strong></p>
+              <div class="alquiler-informacion" >
+                <p id="gd"><strong>Guayaquil-Duran</strong></p>
                 <p>Departamento con 1 cuarto disponible</p>
                 <p><em>$125</em></p>
               </div>
-              <svg
+              <svg onclick="eliminarDiv(this)"
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
@@ -504,14 +503,14 @@
                 />
               </svg>
             </div>
-            <div class="alquiler">
+            <div class="alquiler" id="df1">
               <img src="assets/img/descarga(2).jpg" alt="casa" />
-              <div class="alquiler-informacion">
-                <p><strong>Guayaquil-Centro</strong></p>
+              <div class="alquiler-informacion" >
+                <p id="gc"><strong>Guayaquil-Centro</strong></p>
                 <p>Cuarto con Baño y cocina disponibles</p>
                 <p><em>$125</em></p>
               </div>
-              <svg
+              <svg onclick="eliminarDiv(this)"
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
@@ -524,14 +523,14 @@
                 />
               </svg>
             </div>
-            <div class="alquiler">
+            <div class="alquiler" id="df2">
               <img src="assets/img/images(1).jpg" alt="Departamento2" />
-              <div class="alquiler-informacion">
-                <p><strong>Samborondon-Las Joyas</strong></p>
+              <div class="alquiler-informacion" >
+                <p id="sj"><strong>Samborondon-Las Joyas</strong></p>
                 <p>Departamento con 1 cuarto equidado</p>
                 <p><em>$200</em></p>
               </div>
-              <svg
+              <svg onclick="eliminarDiv(this)"
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
@@ -544,14 +543,14 @@
                 />
               </svg>
             </div>
-            <div class="alquiler">
+            <div class="alquiler" id="df3">
               <img src="assets/img/images(2).jpg" alt="casa2" />
-              <div class="alquiler-informacion">
-                <p><strong>Manabi-Chone</strong></p>
+              <div class="alquiler-informacion" >
+                <p id="mc"><strong>Manabi-Chone</strong></p>
                 <p>Casa de alquiler con servicios basicos</p>
                 <p><em>$210</em></p>
               </div>
-              <svg
+              <svg onclick="eliminarDiv(this)"
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
@@ -564,14 +563,14 @@
                 />
               </svg>
             </div>
-            <div class="alquiler">
+            <div class="alquiler" id="df4">
               <img src="assets/img/images(3).jpg" alt="casa3" />
               <div class="alquiler-informacion">
-                <p><strong>Los Rios-Machala</strong></p>
+                <p id="rm"><strong>Los Rios-Machala</strong></p>
                 <p>Casa de aquiler con servicios basicos</p>
                 <p><em>$250</em></p>
               </div>
-              <svg
+              <svg onclick="eliminarDiv(this)"
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
@@ -619,6 +618,7 @@
             <a href="#" class="fa fa-facebook"></a>
             <a href="#" class="fa fa-instagram"></a>
             <a href="#" class="fa fa-twitter"></a>
+            
           </div>
         </div>
       </div>
@@ -629,5 +629,93 @@
         >
       </div>
     </footer>
+    <script type="text/javascript">//obtener 
+      function perfil2(){
+      //cambio de imagen
+        var img = document.querySelector("#fotoUser img");
+        img.src = "assets/img/perfil2.jpg";
+
+      //cambio de parrafos
+       let parrafo = document.querySelector("#nom");
+       parrafo.innerHTML = "<strong>Nombre:</strong> Melanie Valdiviezo Zambrano  ";
+        let parrafo2 = document.querySelector("#cor");
+        parrafo2.innerHTML = "<strong>Correo:</strong><i><u>MelanieValdz@gmail.com</u></i>";
+        let parrafo3 = document.querySelector("#tel");
+        parrafo3.innerHTML = "<strong>Telefono:</strong> 0911111145";
+        let parrafo4 = document.querySelector("#ocu");
+        parrafo4.innerHTML = "<strong>Ocupacion:</strong>Diseñadora de modas"; 
+        let parrafo5 = document.querySelector("#hob");
+        parrafo5.innerHTML = "<strong>Hobbies:</strong>Pintar"; 
+        let parrafo6 = document.querySelector("#idi");
+        parrafo6.innerHTML = "<strong>Idioma:</strong>Italino"; 
+        let parrafo7 = document.querySelector("#dir");
+        parrafo7.innerHTML = "<strong>Direccion:</strong>Samborondon - Aurora"; 
+        let parrafo8 = document.querySelector("#fna");
+        parrafo8.innerHTML = "<strong>Fecha de Nacimiento:</strong><time datetime='2001-09-16'>16 de septiembre del 2001</time>";
+
+      //cambio de enlaces
+        let fb =document.querySelector("#facebook");
+        fb.href = "https://www.facebook.com/melaniezambrano15";
+        let ins =document.querySelector("#instagram");
+        ins.href = "https://www.instagram.com/valdiviezomelanie?igsh=NTFmazE1bzBwZjYy";
+        
+      //cambio de los departamentos agg
+        let dep1 = document.querySelector("#gd");
+        dep1.innerHTML = "<strong><i>Samborondon - Villaclub</i></strong>";
+        let dep2 = document.querySelector("#gc");
+        dep2.innerHTML = "<strong><i>Samborondon - Puntilla</i></strong>";
+        let dep3 = document.querySelector("#sj");
+        dep3.innerHTML = "<strong><i>Samborondon - Aquamarina</i></strong>";
+        let dep4 = document.querySelector("#mc");
+        dep4.innerHTML = "<strong><i>Guayaquil - Ceibos</i></strong>";
+        let dep5 = document.querySelector("#rm");
+        dep5.innerHTML = "<strong><i>Samborondon - Las Riberas</i></strong>";
+
+      //cambio de la imagen
+        let img2 = document.querySelector(".alquiler img");
+        img2.src = "assets/img/images(1).jpg";
+        let img3 = document.querySelector("#df1 img");
+        img3.src = "assets/img/images(1).jpg";
+        let img4 = document.querySelector("#df2 img");
+        img4.src = "assets/img/images(1).jpg";
+        let img5 = document.querySelector("#df3 img");
+        img5.src = "assets/img/images(1).jpg";
+        let img6 = document.querySelector("#df4 img");
+        img6.src = "assets/img/images(1).jpg";
+
+      } 
+      let paginaInicial;
+      // Guardar el estado inicial de la página cuando se carga
+      window.onload = function() {
+          paginaInicial = document.body.innerHTML;
+      };
+      // Función para restaurar el estado original
+      function restorepaginaInicial() {
+          document.body.innerHTML = paginaInicial;
+      }
+      function perfildef(){
+        var img = document.querySelector("#fotoUser img");
+        img.src = "assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg";
+        restorepaginaInicial();
+      
+
+      }
+      function btnPerfil(){
+        
+        var img = document.querySelector("#fotoUser img");
+
+        if (img.src.includes("pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg")) {
+          perfil2();
+        } else {
+          perfildef();
+        }
+      }
+
+      function eliminarDiv(element) {
+            element.parentNode.remove();
+        }
+
+
+    </script>
   </body>
 </html>
