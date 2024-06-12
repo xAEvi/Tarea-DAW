@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Vélez Pulido Christopher Jeremy">
-    <link rel="stylesheet" href="assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Vélez Pulido Christopher Jeremy" />
+    <link rel="stylesheet" href="assets/style.css" />
     <script
       src="https://kit.fontawesome.com/8b96afa7e9.js"
       crossorigin="anonymous"
     ></script>
     <title>Contacto</title>
     <style>
-        body {
+      body {
         font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+        background-color: #65b5b1;
       }
-        .contenedor {
-            max-width: 80%;
-            margin: auto;
-            padding: 20px;
-            display: flex;
-            gap: 20px; /* Espacio entre los elementos */
-            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-            
-        }
+      .contenedor {
+        max-width: 80%;
+        margin: auto;
+        padding: 20px;
+        height: 100vh;
+        display: flex;
+        gap: 20px; /* Espacio entre los elementos */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+      }
 
+      .detalle_propiedad {
+        align-self: flex-start; /* Alinea el elemento al inicio del contenedor flex */
+        margin: 15px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-width: 300px; /* Define un ancho mínimo para evitar que se reduzca demasiado */
+        flex: 1 1 45%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 45% */
+      }
 
-        .detalle_propiedad {
-            align-self: flex-start; /* Alinea el elemento al inicio del contenedor flex */
-            margin: 15px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            min-width: 300px; /* Define un ancho mínimo para evitar que se reduzca demasiado */
-            flex: 1 1 45%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 45% */
-        }
+      .contenedor_formulario {
+        align-self: auto; /* Restaura el comportamiento predeterminado de alineación */
+        margin: 15px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1 1 45%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 45% */
+        height: max-content;
+      }
 
-        .contenedor_formulario {
-            align-self: auto; /* Restaura el comportamiento predeterminado de alineación */
-            margin: 15px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            min-width: 300px; /* Define un ancho mínimo para evitar que se reduzca demasiado */
-            flex: 1 1 45%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 45% */
-        }
+      .grupo-form {
+        margin-bottom: 15px;
+      }
 
-        .grupo-form {
-            margin-bottom: 15px;
-        }
+      .grupo-form label {
+        display: block;
+        margin-bottom: 5px;
+      }
 
-        .grupo-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
+      .grupo-form input,
+      .grupo-form select,
+      .grupo-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
 
-        .grupo-form input, .grupo-form select, .grupo-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+      button {
+        background-color: #19828c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-        button {
-            background-color: #19828c;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+      button:hover {
+        background-color: #1a415a;
+      }
 
-        button:hover {
-            background-color: #1a415a;
-        }
+      .error {
+        color: red;
+        font-size: 0.9em;
+      }
 
-        .error {
-            color: red;
-            font-size: 0.9em;
-        }
-
-        .footer {
+      .footer {
         width: calc(100vw - 100px);
         float: right;
       }
@@ -209,222 +210,238 @@
         .footer {
           width: 100%;
         }
-    }
-
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="sidebar">
-        <header>
-          <img
-            style="width: 65px"
-            id="main-icon"
-            src="assets/img/logo.png"
-            alt="Icon">
-        </header>
-        <nav id="sidenav">
-          <a href="index.html"
-            ><img class="icon" src="assets/img/home.svg" alt="Home"
-          /></a>
-          <a href="search.html"
-            ><img class="icon" src="assets/img/squares.svg" alt="Search"
-          /></a>
-          <a href="contact.html"
-            ><img class="icon" src="assets/img/contact.svg" alt="Contact"
-          /></a>
-        </nav>
-  
-        <div class="user">
-          <a href="vistaUser.html"
-            ><img
-              src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
-              alt="User"
-              style="height: 50px"
-          /></a>
-        </div>
+      <header>
+        <img
+          style="width: 65px"
+          id="main-icon"
+          src="assets/img/logo.png"
+          alt="Icon"
+        />
+      </header>
+      <nav id="sidenav">
+        <a href="index.html"
+          ><img class="icon" src="assets/img/home.svg" alt="Home"
+        /></a>
+        <a href="search.html"
+          ><img class="icon" src="assets/img/squares.svg" alt="Search"
+        /></a>
+        <a href="contact.html"
+          ><img class="icon" src="assets/img/contact.svg" alt="Contact"
+        /></a>
+      </nav>
+
+      <div class="user">
+        <a href="vistaUser.html"
+          ><img
+            src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
+            alt="User"
+            style="height: 50px"
+        /></a>
       </div>
+    </div>
     <!-- Información de la Casa -->
     <div class="contenedor">
-        <section class="detalle_propiedad">
-            <h2>Detalles de la Propiedad</h2>
-            <p>Información breve sobre la casa...</p>
-            <p><strong>Dirección:</strong> Calle: 123, Ciudad: Guayaquil, País: Ecuador</p>
-            <p><strong>Precio de la casa:</strong> $2,123</p>
-            <p><strong>Incluido:</strong> Wi-Fi, Aire acondicionado, Estacionamiento, Piscina, Televisión</p>
-            <img src="assets/img/casa.jpg" alt="Imagen de la propiedad" style="width: 50%; border-radius: 8px" />
-            <div class="boton">
-              <button id="volver">Volver</button>
-            </div>
-        </section>
-        <div class="contenedor_formulario">
-            <h2>Comunicate con el propietario</h2>
-            <form id="contacto_form">
-                <div class="grupo-form">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre">
-                    <div class="error" id="error-nombre"></div>
-                </div>
-            
-                <div class="grupo-form">
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" id="asunto" name="asunto">
-                    <div class="error" id="error-asunto"></div>
-                </div>
-                <div class="grupo-form">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje"></textarea>
-                    <div class="error" id="error-mensaje"></div>
-                </div>
-                <div class="grupo-form">
-                    <label for="preferencia">Preferencia de Contacto:</label>
-                    <select id="preferencia" name="preferencia">
-                        <option value="">Seleccione una opción</option>
-                        <option value="email">Correo Electrónico</option>
-                        <option value="telefono">Teléfono</option>
-                    </select>
-                    <div class="error" id="error-preferencia"></div>
-                </div>
-                <div class="grupo-form">
-                    <label for="fecha">Fecha de Contacto:</label>
-                    <input type="date" id="fecha" name="fecha">
-                    <div class="error" id="error-fecha"></div>
-                </div>
-                <div class="grupo-form">
-                    <label for="hora">Hora de Contacto:</label>
-                    <input type="time" id="hora" name="hora">
-                    <div class="error" id="error-hora"></div>
-                </div>
-                <div class="grupo-form">
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
+      <section class="detalle_propiedad">
+        <h2>Detalles de la Propiedad</h2>
+        <p>Información breve sobre la casa...</p>
+        <p>
+          <strong>Dirección:</strong> Calle: 123, Ciudad: Guayaquil, País:
+          Ecuador
+        </p>
+        <p><strong>Precio de la casa:</strong> $2,123</p>
+        <p>
+          <strong>Incluido:</strong> Wi-Fi, Aire acondicionado, Estacionamiento,
+          Piscina, Televisión
+        </p>
+        <img
+          src="assets/img/casa.jpg"
+          alt="Imagen de la propiedad"
+          style="width: 50%; border-radius: 8px"
+        />
+        <div class="boton">
+          <button id="volver">Volver</button>
         </div>
+      </section>
+      <div class="contenedor_formulario">
+        <h2>Comunicate con el propietario</h2>
+        <form id="contacto_form">
+          <div class="grupo-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" />
+            <div class="error" id="error-nombre"></div>
+          </div>
+
+          <div class="grupo-form">
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" />
+            <div class="error" id="error-asunto"></div>
+          </div>
+          <div class="grupo-form">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+            <div class="error" id="error-mensaje"></div>
+          </div>
+          <div class="grupo-form">
+            <label for="preferencia">Preferencia de Contacto:</label>
+            <select id="preferencia" name="preferencia">
+              <option value="">Seleccione una opción</option>
+              <option value="email">Correo Electrónico</option>
+              <option value="telefono">Teléfono</option>
+            </select>
+            <div class="error" id="error-preferencia"></div>
+          </div>
+          <div class="grupo-form">
+            <label for="fecha">Fecha de Contacto:</label>
+            <input type="date" id="fecha" name="fecha" />
+            <div class="error" id="error-fecha"></div>
+          </div>
+          <div class="grupo-form">
+            <label for="hora">Hora de Contacto:</label>
+            <input type="time" id="hora" name="hora" />
+            <div class="error" id="error-hora"></div>
+          </div>
+          <div class="grupo-form">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
     <footer class="footer" style="display: block">
-        <div class="grupo1">
-          <div class="box">
-            <figure>
-              <a href="index.html">
-                <img src="assets/img/logo.png" alt="Logo_empresa" />
-              </a>
-            </figure>
-          </div>
-          <div class="box">
-            <h2>Sobre Nosotros</h2>
-            <p>
-              En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler
-              de propiedades, ya sean departamentos, casas, o cualquier otro tipo
-              de inmueble. Nuestra misión es conectar de manera efectiva a
-              propietarios e inquilinos, brindando soluciones prácticas y seguras
-              para ambas partes.
-            </p>
-            <p>
-              Nuestro equipo está comprometido en ofrecer un servicio de alta
-              calidad, nos esforzamos por simplificar el proceso de búsqueda,
-              alquiler y gestión de propiedades, asegurando una experiencia
-              satisfactoria para todos nuestros usuarios.
-            </p>
-          </div>
-          <div class="box">
-            <h2>Siguenos en:</h2>
-            <div class="Redes">
-              <a href="#" class="fa fa-facebook"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-twitter"></a>
-            </div>
+      <div class="grupo1">
+        <div class="box">
+          <figure>
+            <a href="index.html">
+              <img src="assets/img/logo.png" alt="Logo_empresa" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler
+            de propiedades, ya sean departamentos, casas, o cualquier otro tipo
+            de inmueble. Nuestra misión es conectar de manera efectiva a
+            propietarios e inquilinos, brindando soluciones prácticas y seguras
+            para ambas partes.
+          </p>
+          <p>
+            Nuestro equipo está comprometido en ofrecer un servicio de alta
+            calidad, nos esforzamos por simplificar el proceso de búsqueda,
+            alquiler y gestión de propiedades, asegurando una experiencia
+            satisfactoria para todos nuestros usuarios.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Siguenos en:</h2>
+          <div class="Redes">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
           </div>
         </div>
-        <div class="grupo2">
-          <small
-            >&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
-            Reservados.</small
-          >
-        </div>
+      </div>
+      <div class="grupo2">
+        <small
+          >&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
     </footer>
-   
+
     <script type="text/javascript">
-        document.getElementById('contacto_form').addEventListener('submit', function(event) {
-            
-            let isValid = true;
+      document
+        .getElementById("contacto_form")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
 
-            // Validar Nombre
-            const nombre = document.getElementById('nombre').value;
-            if (nombre.trim() === '') {
-                isValid = false;
-                document.getElementById('error-nombre').innerText = 'El nombre es obligatorio.';
-            } else {
-                document.getElementById('error-nombre').innerText = '';
-            }
-      
+          // Validar Nombre
+          const nombre = document.getElementById("nombre").value;
+          if (nombre.trim() === "") {
+            isValid = false;
+            document.getElementById("error-nombre").innerText =
+              "El nombre es obligatorio.";
+          } else {
+            document.getElementById("error-nombre").innerText = "";
+          }
 
-            // Validar Asunto
-            const asunto = document.getElementById('asunto').value;
-            if (asunto.trim() === '') {
-                isValid = false;
-                document.getElementById('error-asunto').innerText = 'El asunto es obligatorio.';
-            } else {
-                document.getElementById('error-asunto').innerText = '';
-            }
+          // Validar Asunto
+          const asunto = document.getElementById("asunto").value;
+          if (asunto.trim() === "") {
+            isValid = false;
+            document.getElementById("error-asunto").innerText =
+              "El asunto es obligatorio.";
+          } else {
+            document.getElementById("error-asunto").innerText = "";
+          }
 
-            // Validar Mensaje
-            const mensaje = document.getElementById('mensaje').value;
-            if (mensaje.trim() === '') {
-                isValid = false;
-                document.getElementById('error-mensaje').innerText = 'El mensaje es obligatorio.';
-            } else {
-                document.getElementById('error-mensaje').innerText = '';
-            }
+          // Validar Mensaje
+          const mensaje = document.getElementById("mensaje").value;
+          if (mensaje.trim() === "") {
+            isValid = false;
+            document.getElementById("error-mensaje").innerText =
+              "El mensaje es obligatorio.";
+          } else {
+            document.getElementById("error-mensaje").innerText = "";
+          }
 
-            // Validar Preferencia de Contacto
-            const preferencia = document.getElementById('preferencia').value;
-            if (preferencia === '') {
-                isValid = false;
-                document.getElementById('error-preferencia').innerText = 'Seleccione una preferencia de contacto.';
-            } else {
-                document.getElementById('error-preferencia').innerText = '';
-            }
+          // Validar Preferencia de Contacto
+          const preferencia = document.getElementById("preferencia").value;
+          if (preferencia === "") {
+            isValid = false;
+            document.getElementById("error-preferencia").innerText =
+              "Seleccione una preferencia de contacto.";
+          } else {
+            document.getElementById("error-preferencia").innerText = "";
+          }
 
-            // Validar Fecha de Contacto
-            const fecha = document.getElementById('fecha').value;
-            if (fecha === '') {
-                isValid = false;
-                document.getElementById('error-fecha').innerText = 'Seleccione una fecha de contacto.';
-            } else {
-                document.getElementById('error-fecha').innerText = '';
-            }
+          // Validar Fecha de Contacto
+          const fecha = document.getElementById("fecha").value;
+          if (fecha === "") {
+            isValid = false;
+            document.getElementById("error-fecha").innerText =
+              "Seleccione una fecha de contacto.";
+          } else {
+            document.getElementById("error-fecha").innerText = "";
+          }
 
-            // Validar Hora de Contacto
-            const hora = document.getElementById('hora').value;
-            if (hora === '') {
-                isValid = false;
-                document.getElementById('error-hora').innerText = 'Seleccione una hora de contacto.';
-            } else {
-                document.getElementById('error-hora').innerText = '';
-            }
+          // Validar Hora de Contacto
+          const hora = document.getElementById("hora").value;
+          if (hora === "") {
+            isValid = false;
+            document.getElementById("error-hora").innerText =
+              "Seleccione una hora de contacto.";
+          } else {
+            document.getElementById("error-hora").innerText = "";
+          }
 
-            if (isValid) {
-                alert('Formulario enviado con éxito.');
-                
-            }else{
-              event.preventDefault();
-            }
+          if (isValid) {
+            alert("Formulario enviado con éxito.");
+          } else {
+            event.preventDefault();
+          }
         });
-        const submitButton = document.querySelector('.contenedor_formulario button');
-        
-        const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-      button.addEventListener('mouseenter', () => {
-        button.style.transform = 'scale(1.1)';
-      });
+      const submitButton = document.querySelector(
+        ".contenedor_formulario button"
+      );
 
-      button.addEventListener('mouseleave', () => {
-        button.style.transform = 'scale(1)';
-      });
-    });
-    document.getElementById('volver').addEventListener('click', function() {
-            window.location.href = 'house.html';
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("mouseenter", () => {
+          button.style.transform = "scale(1.1)";
         });
+
+        button.addEventListener("mouseleave", () => {
+          button.style.transform = "scale(1)";
+        });
+      });
+      document.getElementById("volver").addEventListener("click", function () {
+        window.location.href = "house.html";
+      });
     </script>
-</body>
-
+  </body>
 </html>

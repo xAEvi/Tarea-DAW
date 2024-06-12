@@ -11,8 +11,14 @@
       crossorigin="anonymous"
     ></script>
     <style>
+      .container {
+        margin-left: 100px;
+        float: left;
+        height: 100vh;
+        background-color: #b2d5d1;
+        width: calc(100vw - 125px);
+      }
       .contenedorPrincipal {
-        margin-left: 100%;
         display: flex;
         justify-content: center;
         gap: 20%;
@@ -26,6 +32,7 @@
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        width: 750px;
       }
       #btnAceptar {
         border: 1px solid #e47c;
@@ -252,98 +259,105 @@
           /></a>
         </nav>
       </div>
-      <form id="IngresoUser">
-        <div class="contenedorPrincipal">
-          <div class="seccion">
-            <div>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Nombre"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                id="correo"
-                name="correo"
-                style="width: 180pt"
-                placeholder="Email"
-              />
-            </div>
-            <div>
-              <label style="padding-left: 5px">Genero:</label>
-              <input
-                type="radio"
-                id="masculino"
-                name="genero"
-                value="masculino"
-              />
-              <label for="masculino">M</label>
-              <input
-                type="radio"
-                id="femenino"
-                name="genero"
-                value="femenino"
-              />
-              <label for="femenino">F</label>
-            </div>
-            <div>
-              <label style="padding-left: 5px">Direccion:</label>
-              <select id="direccion" name="direccion">
-                <option value="0">Seleccione...</option>
-                <option value="1">Guayaquil-Duran</option>
-                <option value="2">Guayaquil-centro</option>
-                <option value="3">Manabi-Chone</option>
-                <option value="4">Samborondon-Las Joyas</option>
-              </select>
-            </div>
-            <div>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                placeholder="telefono"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                id="ocupacion"
-                name="ocupacion"
-                placeholder="ocupacion"
-              />
-            </div>
-            <div>
-              <label style="padding-left: 5px">Idioma:</label>
-              <select id="idioma" name="idioma">
-                <option value="0">Seleccione...</option>
-                <option value="1">ingles</option>
-                <option value="2">Espaniol</option>
-                <option value="3">Frances</option>
-                <option value="4">Italino</option>
-              </select>
-            </div>
-            <div>
-              <input
-                type="text"
-                id="hobbies"
-                name="hobbies"
-                placeholder="Hobbies"
-              />
-            </div>
-            <div>
-              <label style="padding-left: 5px">Fecha de Nacimiento</label>
-              <input type="date" id="fechaNacimiento" name="fechaNacimiento" />
-              <br />
-            </div>
-            <div class="btn-container">
-              <button id="btnAceptar" type="submit">Aceptar</button>
+      <div class="container">
+        <h1 style="text-align: center; color: #19828d">Editar Perfil</h1>
+        <form id="IngresoUser">
+          <div class="contenedorPrincipal">
+            <div class="seccion">
+              <div>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Nombre"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="correo"
+                  name="correo"
+                  style="width: 180pt"
+                  placeholder="Email"
+                />
+              </div>
+              <div>
+                <label style="padding-left: 5px">Genero:</label>
+                <input
+                  type="radio"
+                  id="masculino"
+                  name="genero"
+                  value="masculino"
+                />
+                <label for="masculino">M</label>
+                <input
+                  type="radio"
+                  id="femenino"
+                  name="genero"
+                  value="femenino"
+                />
+                <label for="femenino">F</label>
+              </div>
+              <div>
+                <label style="padding-left: 5px">Direccion:</label>
+                <select id="direccion" name="direccion">
+                  <option value="0">Seleccione...</option>
+                  <option value="1">Guayaquil-Duran</option>
+                  <option value="2">Guayaquil-centro</option>
+                  <option value="3">Manabi-Chone</option>
+                  <option value="4">Samborondon-Las Joyas</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="telefono"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="ocupacion"
+                  name="ocupacion"
+                  placeholder="ocupacion"
+                />
+              </div>
+              <div>
+                <label style="padding-left: 5px">Idioma:</label>
+                <select id="idioma" name="idioma">
+                  <option value="0">Seleccione...</option>
+                  <option value="1">ingles</option>
+                  <option value="2">Espaniol</option>
+                  <option value="3">Frances</option>
+                  <option value="4">Italino</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="hobbies"
+                  name="hobbies"
+                  placeholder="Hobbies"
+                />
+              </div>
+              <div>
+                <label style="padding-left: 5px">Fecha de Nacimiento</label>
+                <input
+                  type="date"
+                  id="fechaNacimiento"
+                  name="fechaNacimiento"
+                />
+                <br />
+              </div>
+              <div class="btn-container">
+                <button id="btnAceptar" type="submit">Aceptar</button>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </main>
     <footer class="footer" style="display: block">
       <div class="grupo1">

@@ -24,6 +24,7 @@
         flex-direction: column;
         align-items: center;
         padding: 2rem;
+        height: 100vh;
         margin-left: 100px;
       }
 
@@ -50,6 +51,7 @@
       }
 
       .form-container {
+        margin-top: 125px;
         width: calc(100% - 1rem);
       }
 
@@ -358,11 +360,7 @@
                 placeholder="Apellido"
               />
             </div>
-            <input
-              id="email"
-              name="email"
-              placeholder="Correo Electrónico"
-            />
+            <input id="email" name="email" placeholder="Correo Electrónico" />
             <input
               type="tel"
               id="phone"
@@ -426,62 +424,66 @@
       </div>
     </footer>
     <script>
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-        var firstname = document.getElementById('firstname').value.trim();
-        var lastname = document.getElementById('lastname').value.trim();
-        var email = document.getElementById('email').value.trim();
-        var phone = document.getElementById('phone').value.trim();
-        var message = document.getElementById('message').value.trim();
-        var valid = true;
+          var firstname = document.getElementById("firstname").value.trim();
+          var lastname = document.getElementById("lastname").value.trim();
+          var email = document.getElementById("email").value.trim();
+          var phone = document.getElementById("phone").value.trim();
+          var message = document.getElementById("message").value.trim();
+          var valid = true;
 
-        if (firstname === '') {
-          alert('Por favor, ingrese su nombre.');
-          valid = false;
-        }
+          if (firstname === "") {
+            alert("Por favor, ingrese su nombre.");
+            valid = false;
+          }
 
-        if (lastname === '') {
-          alert('Por favor, ingrese su apellido.');
-          valid = false;
-        }
+          if (lastname === "") {
+            alert("Por favor, ingrese su apellido.");
+            valid = false;
+          }
 
-        if (email === '') {
-          alert('Por favor, ingrese su correo electrónico.');
-          valid = false;
-        } else if (!/\S+@\S+\.\S+/.test(email)) {
-          alert('Por favor, ingrese un correo electrónico válido.');
-          valid = false;
-        }
+          if (email === "") {
+            alert("Por favor, ingrese su correo electrónico.");
+            valid = false;
+          } else if (!/\S+@\S+\.\S+/.test(email)) {
+            alert("Por favor, ingrese un correo electrónico válido.");
+            valid = false;
+          }
 
-        if (phone === '') {
-          alert('Por favor, ingrese su número de teléfono.');
-          valid = false;
-        } else if (!/^\d{10}$/.test(phone)) {
-          alert('Por favor, ingrese un número de teléfono válido (10 dígitos).');
-          valid = false;
-        }
+          if (phone === "") {
+            alert("Por favor, ingrese su número de teléfono.");
+            valid = false;
+          } else if (!/^\d{10}$/.test(phone)) {
+            alert(
+              "Por favor, ingrese un número de teléfono válido (10 dígitos)."
+            );
+            valid = false;
+          }
 
-        if (message === '') {
-          alert('Por favor, ingrese un mensaje.');
-          valid = false;
-        }
+          if (message === "") {
+            alert("Por favor, ingrese un mensaje.");
+            valid = false;
+          }
 
-        if (valid) {
-          alert('Formulario enviado con éxito!');
-          this.submit();
-        }
-      });
+          if (valid) {
+            alert("Formulario enviado con éxito!");
+            this.submit();
+          }
+        });
 
       // Hover/Zoom
-      const submitButton = document.querySelector('.form-container button');
+      const submitButton = document.querySelector(".form-container button");
 
-      submitButton.addEventListener('mouseenter', () => {
-        submitButton.style.transform = 'scale(1.1)';
+      submitButton.addEventListener("mouseenter", () => {
+        submitButton.style.transform = "scale(1.1)";
       });
 
-      submitButton.addEventListener('mouseleave', () => {
-        submitButton.style.transform = 'scale(1)';
+      submitButton.addEventListener("mouseleave", () => {
+        submitButton.style.transform = "scale(1)";
       });
     </script>
   </body>
