@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jhon Quinto" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Contáctanos</title>
+    <script
+      src="https://kit.fontawesome.com/8b96afa7e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        margin-left: 100px;
+        float: left;
+        height: max-content;
+        display: flex;
+        width: calc(100vw - 125px);
+      }
+
+      .form {
+        background-color: #65b5b1;
+        width: 750px;
+        margin: 75px auto;
+        border-radius: 25px;
+      }
+
+      .error {
+        color: red;
+      }
+      .campo {
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #agregarPropiedad {
+        padding: 2rem;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .error {
+        color: #d62e2e;
+      }
+      .campo {
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #agregarPropiedad {
+        color: #efefef;
+        padding: 2rem;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .btn-container {
+        margin-top: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .add,
+      .cancel {
+        padding: 1rem;
+        border-radius: 5px;
+        border: none;
+        color: #efefef;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .add {
+        background-color: #30616c;
+      }
+
+      .cancel {
+        background-color: #e47c7c;
+      }
+
+      .add:hover,
+      .cancel:hover {
+        cursor: pointer;
+        transform: scale(110%);
+      }
+
+      #main-icon {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+
+      #main-icon img {
+        width: 50px;
+      }
+
+      .icon {
+        margin: auto;
+        width: 30px;
+      }
+
+      #sidenav {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      #sidenav a {
+        display: flex;
+        height: 50px;
+      }
+
+      #sidenav a:hover {
+        background-color: #19828c;
+      }
+
+      .sidebar {
+        position: fixed;
+        background-color: #30616c;
+        height: 100%;
+        width: 100px;
+        float: left;
+        padding: 50px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user {
+        margin-top: auto;
+      }
+
+      .user:hover {
+        cursor: pointer;
+      }
+
+      .user img {
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+
+      .footer {
+        width: calc(100vw - 100px);
+        float: right;
+      }
+
+      @media (max-width: 1250px) {
+        .sort-container h4 {
+          display: none;
+        }
+
+        .search-bar {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 775px) {
+        .search-bar input::placeholder {
+          opacity: 0;
+        }
+
+        .main-container {
+          margin-left: 0;
+        }
+
+        .sidebar {
+          position: relative;
+          float: none;
+          width: 100%;
+          height: 100px;
+          flex-direction: row;
+          padding: 0 1rem;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        #sidenav {
+          flex-direction: row;
+        }
+
+        #main-icon {
+          margin-bottom: 0;
+          width: auto;
+        }
+
+        .user {
+          margin: 0;
+        }
+
+        .container {
+          width: auto;
+          margin-left: 2rem;
+          float: none;
+          display: unset;
+        }
+
+        .filter-container {
+          width: auto;
+          height: auto;
+          margin-bottom: 2rem;
+        }
+
+        .filter-container h1 {
+          margin: auto;
+        }
+
+        .apply {
+          width: 150px;
+        }
+
+        .apparment-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .container {
+          margin-left: 0;
+        }
+
+        .bath-bed-container {
+          flex-direction: column;
+        }
+
+        .footer {
+          width: 100%;
+        }
+
+        .form {
+          width: 75%;
+        }
+
+        #agregarPropiedad {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <header>
+        <img
+          style="width: 65px"
+          id="main-icon"
+          src="assets/img/logo.png"
+          alt="Icon"
+        />
+      </header>
+      <nav id="sidenav">
+        <a href="index.html"
+          ><img class="icon" src="assets/img/home.svg" alt="Home"
+        /></a>
+        <a href="search.html"
+          ><img class="icon" src="assets/img/squares.svg" alt="Search"
+        /></a>
+        <a href="contact.html"
+          ><img class="icon" src="assets/img/contact.svg" alt="Contact"
+        /></a>
+      </nav>
+
+      <div class="user">
+        <a href="vistaUser.html"
+          ><img
+            src="assets/img/pngtree-anime-girl-listening-to-music-picture-image_3381911.jpg"
+            alt="User"
+            style="height: 50px"
+        /></a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="form">
+        <form id="agregarPropiedad">
+          <div class="campo">
+            <label id="labelPropiedad" for="tipoPropiedad"
+              >Tipo de Propiedad:</label
+            >
+            <select id="tipoPropiedad" name="tipoPropiedad">
+              <option value="">Selecciona un tipo</option>
+              <option value="casa">Casa</option>
+              <option value="departamento">Departamento</option>
+              <option value="local">Local Comercial</option>
+              <option value="terreno">Terreno</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label id="labelTitulo" for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" />
+          </div>
+
+          <div class="campo">
+            <label id="labelDescripcion" for="descripcion">Descripción:</label>
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              rows="4"
+              cols="50"
+            ></textarea>
+          </div>
+
+          <div class="campo">
+            <label id="labelPrecio" for="precio">Precio ($):</label>
+            <input type="number" id="precio" name="precio" />
+          </div>
+
+          <div class="campo">
+            <label id="labelOperacion" for="operacion"
+              >Tipo de Operación:</label
+            >
+            <div class="campo-radio">
+              <input
+                type="radio"
+                id="renta"
+                name="operacion"
+                value="alquiler"
+              />
+              <label for="renta">Alquiler</label>
+              <input type="radio" id="venta" name="operacion" value="venta" />
+              <label for="venta">Venta</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label id="labelDireccion" for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" />
+          </div>
+
+          <div class="campo">
+            <label id="labelContacto" for="contacto">Email de Contacto:</label>
+            <input type="text" id="contacto" name="contacto" />
+          </div>
+
+          <div class="btn-container">
+            <a class="cancel" href="search.html">Cancelar</a>
+            <button class="add" type="submit">Agregar Propiedad</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="footer" style="display: block">
+      <div class="grupo1">
+        <div class="box">
+          <figure>
+            <a href="index.html">
+              <img src="assets/img/logo.png" alt="Logo_empresa" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler
+            de propiedades, ya sean departamentos, casas, o cualquier otro tipo
+            de inmueble. Nuestra misión es conectar de manera efectiva a
+            propietarios e inquilinos, brindando soluciones prácticas y seguras
+            para ambas partes.
+          </p>
+          <p>
+            Nuestro equipo está comprometido en ofrecer un servicio de alta
+            calidad, nos esforzamos por simplificar el proceso de búsqueda,
+            alquiler y gestión de propiedades, asegurando una experiencia
+            satisfactoria para todos nuestros usuarios.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Siguenos en:</h2>
+          <div class="Redes">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo2">
+        <small
+          >&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("agregarPropiedad")
+        .addEventListener("submit", function (event) {
+          let valid = true;
+          event.preventDefault();
+
+          document.querySelectorAll(".error").forEach(function (element) {
+            element.classList.remove("error");
+          });
+
+          const propertyType = document.getElementById("tipoPropiedad");
+          if (propertyType.value === "") {
+            document.getElementById("labelPropiedad").classList.add("error");
+            valid = false;
+          }
+
+          const title = document.getElementById("titulo");
+          if (title.value.trim() === "") {
+            document.getElementById("labelTitulo").classList.add("error");
+            valid = false;
+          }
+
+          const description = document.getElementById("descripcion");
+          if (description.value.trim() === "") {
+            document.getElementById("labelDescripcion").classList.add("error");
+            valid = false;
+          }
+
+          const price = document.getElementById("precio");
+          if (
+            price.value.trim() === "" ||
+            isNaN(price.value) ||
+            parseFloat(price.value) <= 0
+          ) {
+            document.getElementById("labelPrecio").classList.add("error");
+            valid = false;
+          }
+
+          const operationTypeRent = document.getElementById("renta");
+          const operationTypeSale = document.getElementById("venta");
+          if (!operationTypeRent.checked && !operationTypeSale.checked) {
+            document.getElementById("labelOperacion").classList.add("error");
+            valid = false;
+          }
+
+          const address = document.getElementById("direccion");
+          if (address.value.trim() === "") {
+            document.getElementById("labelDireccion").classList.add("error");
+            valid = false;
+          }
+
+          const contactEmail = document.getElementById("contacto");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(contactEmail.value)) {
+            document.getElementById("labelContacto").classList.add("error");
+            valid = false;
+          }
+
+          if (valid) {
+            alert("Propiedad agregada exitosamente!");
+          } else {
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>

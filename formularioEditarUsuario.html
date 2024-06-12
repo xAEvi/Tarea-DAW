@@ -1,326 +1,579 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Narcisa Carrillo Sanchez">
-    <title>formularioEditarUsuario</title>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Narcisa Carrillo Sanchez" />
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/8b96afa7e9.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
+      .contenedorPrincipal {
+        margin-left: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20%;
+        width: calc(95%);
+        padding: 5%;
+        margin: auto;
+      }
+      .seccion {
+        background-color: #65b5b1;
+        border: 1px solid #e1e1e1;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      }
+      #btnAceptar {
+        border: 1px solid #e47c;
+        background-color: #fff;
+        color: #e47c7c;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      #btnAceptar:hover {
+        background-color: #e47c7c;
+        color: #fff;
+      }
+      input {
+        padding: 6px 10px;
+        border-radius: 3px;
+        margin-top: 1%;
+        margin-left: 10px;
+        margin-bottom: 1px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      #direccion,
+      #idioma {
+        padding: 6px 10px;
+        border-radius: 3px;
+        margin-top: 1%;
+        margin-left: 10px;
+        margin-bottom: 1px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: center; /* Centra el botón horizontalmente */
+        margin-top: 20px;
+      }
+      label {
+        font-weight: bold;
+      }
+      span {
+        color: brown;
+        padding: 5px;
+      }
+
+      /* Selector de elemento*/
+      main {
+        min-height: 100vh;
+        gap: 20px;
+      }
+
+      @media (max-width: 1100px) {
         .contenedorPrincipal {
-            margin-left: 100%;
-            display: flex;
-            justify-content:center;
-            gap: 20%;
-            width: calc(95%);
-            padding: 5%;
-            margin: auto;
-            
-            
+          flex-direction: column;
         }
-        .seccion {
-            background-color: #65b5b1;
-            border: 1px solid #e1e1e1;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .alquiler-informacion {
+        width: 100%;
+      }
+
+      @media (max-width: 775px) {
+        .contenedorPrincipal {
+          padding: 1rem;
+          margin: auto;
         }
-        #btnAceptar {
-            border: 1px solid #e47c;
-            background-color: #fff;
-            color: #e47c7c;
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-top: 20px;
-            cursor: pointer;
+      }
+
+      .footer {
+        width: calc(100vw - 100px);
+        float: right;
+      }
+
+      #main-icon {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+
+      #main-icon img {
+        width: 50px;
+      }
+
+      .icon {
+        margin: auto;
+        width: 30px;
+      }
+
+      #sidenav {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      #sidenav a {
+        display: flex;
+        height: 50px;
+      }
+
+      #sidenav a:hover {
+        background-color: #19828c;
+      }
+
+      .sidebar {
+        position: fixed;
+        background-color: #30616c;
+        height: 100%;
+        width: 100px;
+        float: left;
+        padding: 50px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user {
+        margin-top: auto;
+      }
+
+      .user:hover {
+        cursor: pointer;
+      }
+
+      .user img {
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+
+      #perfil:hover {
+        display: block;
+      }
+
+      @media (max-width: 775px) {
+        .search-bar input::placeholder {
+          opacity: 0;
         }
-        #btnAceptar:hover {
-            background-color: #e47c7c;
-            color: #fff;
+
+        .main-container {
+          margin-left: 0;
         }
-        input {
-            padding: 6px 10px;
-            border-radius: 3px;
-            margin-top: 1%;
-            margin-left: 10px;
-            margin-bottom: 1px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            
+
+        .sidebar {
+          position: relative;
+          float: none;
+          width: 100%;
+          height: 100px;
+          flex-direction: row;
+          padding: 0 1rem;
+          align-items: center;
+          justify-content: space-around;
         }
-        #direccion , #idioma {
-            padding: 6px 10px;
-            border-radius: 3px;
-            margin-top: 1%;
-            margin-left: 10px;
-            margin-bottom: 1px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            
+
+        #sidenav {
+          flex-direction: row;
         }
-        .btn-container {
-            display: flex;
-            justify-content: center; /* Centra el botón horizontalmente */
-            margin-top: 20px;
+
+        #main-icon {
+          margin-bottom: 0;
+          width: auto;
         }
-        label{
-            font-weight: bold;
+
+        .user {
+          margin: 0;
         }
-        span{
-            color: brown;
-            padding: 5px;
+
+        .main-container {
+          width: auto;
+          margin-left: 2rem;
+          float: none;
+          display: unset;
         }
+
+        .filter-container {
+          padding: 1rem;
+          width: auto;
+          height: auto;
+        }
+
+        .apply {
+          width: 150px;
+        }
+
+        .apparment-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .container {
+          margin-left: 0;
+        }
+
+        .bath-bed-container {
+          flex-direction: column;
+        }
+
+        .footer {
+          width: 100%;
+        }
+      }
     </style>
-</head>
-<body>
-    <form id="IngresoUser">
+  </head>
+  <body>
+    <main>
+      <div class="sidebar">
+        <header>
+          <img
+            style="width: 65px"
+            id="main-icon"
+            src="assets/img/logo.png"
+            alt="Icon"
+          />
+        </header>
+        <nav id="sidenav">
+          <a href="index.html"
+            ><img class="icon" src="assets/img/home.svg" alt="Home"
+          /></a>
+          <a href="search.html"
+            ><img class="icon" src="assets/img/squares.svg" alt="Search"
+          /></a>
+          <a href="contact.html"
+            ><img class="icon" src="assets/img/contact.svg" alt="Contact"
+          /></a>
+        </nav>
+      </div>
+      <form id="IngresoUser">
         <div class="contenedorPrincipal">
-            <div class="seccion">
-                <div>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre"/>
-                </div>
-                <div>
-                    <input type="text" id="correo" name="correo" style="width:180pt;" placeholder="Email"/>
-                </div>
-                <div>
-                    <label style="padding-left: 5px;">Genero:</label>
-                    <input type="radio" id="masculino" name="genero" value="masculino">
-                    <label for="masculino">M</label>
-                    <input type="radio" id="femenino" name="genero" value="femenino">
-                    <label for="femenino">F</label>
-                </div>
-                <div>
-                    <label style="padding-left: 5px;">Direccion:</label>
-                    <select id="direccion" name="direccion">
-                        <option value="0">Seleccione...</option>
-                        <option value="1">Guayaquil-Duran</option>
-                        <option value="2">Guayaquil-centro</option>
-                        <option value="3">Manabi-Chone</option>
-                        <option value="4">Samborondon-Las Joyas</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="tel" id="telefono" name="telefono" placeholder="telefono"/>
-                </div>
-                <div>
-                    <input type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion"/>
-                </div>
-                <div>
-                    <label style="padding-left: 5px;">Idioma:</label>
-                    <select id="idioma" name="idioma">
-                        <option value="0">Seleccione...</option>
-                        <option value="1">ingles</option>
-                        <option value="2">Espaniol</option>
-                        <option value="3">Frances</option>
-                        <option value="4">Italino</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="text" id="hobbies" name="hobbies" placeholder="Hobbies"/>
-                </div>
-                <div>
-                    <label style="padding-left: 5px;">Fecha de Nacimiento</label>
-                    <input type="date" id="fechaNacimiento" name="fechaNacimiento"/>
-                    <br>
-                </div>
-                <div class="btn-container">
-                    <button id="btnAceptar" type="submit">Aceptar</button>
-                </div>
+          <div class="seccion">
+            <div>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre"
+              />
             </div>
+            <div>
+              <input
+                type="text"
+                id="correo"
+                name="correo"
+                style="width: 180pt"
+                placeholder="Email"
+              />
+            </div>
+            <div>
+              <label style="padding-left: 5px">Genero:</label>
+              <input
+                type="radio"
+                id="masculino"
+                name="genero"
+                value="masculino"
+              />
+              <label for="masculino">M</label>
+              <input
+                type="radio"
+                id="femenino"
+                name="genero"
+                value="femenino"
+              />
+              <label for="femenino">F</label>
+            </div>
+            <div>
+              <label style="padding-left: 5px">Direccion:</label>
+              <select id="direccion" name="direccion">
+                <option value="0">Seleccione...</option>
+                <option value="1">Guayaquil-Duran</option>
+                <option value="2">Guayaquil-centro</option>
+                <option value="3">Manabi-Chone</option>
+                <option value="4">Samborondon-Las Joyas</option>
+              </select>
+            </div>
+            <div>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="telefono"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                id="ocupacion"
+                name="ocupacion"
+                placeholder="ocupacion"
+              />
+            </div>
+            <div>
+              <label style="padding-left: 5px">Idioma:</label>
+              <select id="idioma" name="idioma">
+                <option value="0">Seleccione...</option>
+                <option value="1">ingles</option>
+                <option value="2">Espaniol</option>
+                <option value="3">Frances</option>
+                <option value="4">Italino</option>
+              </select>
+            </div>
+            <div>
+              <input
+                type="text"
+                id="hobbies"
+                name="hobbies"
+                placeholder="Hobbies"
+              />
+            </div>
+            <div>
+              <label style="padding-left: 5px">Fecha de Nacimiento</label>
+              <input type="date" id="fechaNacimiento" name="fechaNacimiento" />
+              <br />
+            </div>
+            <div class="btn-container">
+              <button id="btnAceptar" type="submit">Aceptar</button>
+            </div>
+          </div>
         </div>
-    </form>
+      </form>
+    </main>
+    <footer class="footer" style="display: block">
+      <div class="grupo1">
+        <div class="box">
+          <figure>
+            <a href="index.html">
+              <img src="assets/img/logo.png" alt="Logo_empresa" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            En Alquila Fácil, nos dedicamos a facilitar el proceso de alquiler
+            de propiedades, ya sean departamentos, casas, o cualquier otro tipo
+            de inmueble. Nuestra misión es conectar de manera efectiva a
+            propietarios e inquilinos, brindando soluciones prácticas y seguras
+            para ambas partes.
+          </p>
+          <p>
+            Nuestro equipo está comprometido en ofrecer un servicio de alta
+            calidad, nos esforzamos por simplificar el proceso de búsqueda,
+            alquiler y gestión de propiedades, asegurando una experiencia
+            satisfactoria para todos nuestros usuarios.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Siguenos en:</h2>
+          <div class="Redes">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo2">
+        <small
+          >&copy; 2024 <b>Alquila Fácil</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
     <script>
-        const form = document.querySelector("#IngresoUser");
-        form.addEventListener("submit", validar);
+      const form = document.querySelector("#IngresoUser");
+      form.addEventListener("submit", validar);
 
-        function mensaje(message, element) {
-            const parent = element.parentNode;
-            const mensajeSpan = document.createElement("span");
-            mensajeSpan.textContent = message;
-            mensajeSpan.className = "error";
-            parent.appendChild(mensajeSpan);
-        }
+      function mensaje(message, element) {
+        const parent = element.parentNode;
+        const mensajeSpan = document.createElement("span");
+        mensajeSpan.textContent = message;
+        mensajeSpan.className = "error";
+        parent.appendChild(mensajeSpan);
+      }
 
-        function limpiar() {
-            const errors = document.querySelectorAll(".error");
-            errors.forEach((error) => {
-                error.remove();
-            });
-        }
+      function limpiar() {
+        const errors = document.querySelectorAll(".error");
+        errors.forEach((error) => {
+          error.remove();
+        });
+      }
 
-        
+      function validar(event) {
+        limpiar();
+        event.preventDefault();
+        let bandera = true;
 
-        function validar(event) {
-            limpiar();
-            event.preventDefault();
-            let bandera = true;
+        // Recolectar elementos html
+        const txtNombre = form.nombre;
+        const txtEmail = form.correo;
+        const radGenero = form.genero;
+        const seldireccion = form.direccion;
+        const txtTelefono = form.telefono;
+        const txtOcupacion = form.ocupacion;
+        const selIdioma = form.idioma;
+        const txtHobbies = form.hobbies;
+        const dateFechaNacimiento = form.fechaNacimiento;
 
-            // Recolectar elementos html
-            const txtNombre = form.nombre;
-            const txtEmail = form.correo;
-            const radGenero = form.genero;
-            const seldireccion = form.direccion;
-            const txtTelefono = form.telefono;
-            const txtOcupacion = form.ocupacion;
-            const selIdioma = form.idioma;
-            const txtHobbies = form.hobbies;
-            const dateFechaNacimiento = form.fechaNacimiento;
+        // Expresiones regulares
+        const noSpaces = /^\S*$/;
+        const validDomain = /^[a-zA-Z0-9._%+-]+@ug\.edu\.ec$/;
+        const num = /^[0-9]+$/;
+        const letras = /^[a-zA-Z\s]*$/;
+        const tel = /^09\d{8}$/;
 
-            
-            
-
-            // Expresiones regulares
-            const noSpaces = /^\S*$/;
-            const validDomain = /^[a-zA-Z0-9._%+-]+@ug\.edu\.ec$/;
-            const num = /^[0-9]+$/;
-            const letras = /^[a-zA-Z\s]*$/;
-            const  tel = /^09\d{8}$/;
-
-            /*
+        /*
                 Validaciones
             */
 
-            // Validación de nombre
-            if (txtNombre.value === "") {
-                bandera = false;
-                mensaje("¡Ingresar nombre es obligatorio!", nombre);
-            } else if (!letras.test(txtNombre.value)) {
-                bandera = false;
-                mensaje("¡El nombre debe contener solo letras!", nombre);
-                
-            } else if (noSpaces.test(txtNombre.value)) {
-                bandera = false;
-                mensaje("¡Ingrese un nombre y un apellido.!", nombre);
-            }
-
-            // Validación de correo
-            if (txtEmail.value === "") {
-                bandera = false;
-                mensaje("¡Ingresar correo es obligatorio!", correo);
-            }else if (!validDomain.test(txtEmail.value)) {
-                bandera = false;
-                mensaje("¡Correo debe ser institucional.!", correo);
-            }
-
-            // Validación de genero
-            let sel = false;
-            for (let i = 0 ; i < radGenero.length; i++) {
-                if (radGenero[i].checked){
-                   sel = true; 
-                   let res = radGenero[i].value;
-                   break
-                }
-                
-            }
-            if (!sel){
-                bandera = false;
-                mensaje("¡Seleccione un género!", radGenero[0]);
-            }
-            
-            //validacion de direccion
-            if (seldireccion.value === null || seldireccion.value ==='0') {
-                bandera=false;
-                mensaje("¡Es obligatorio Seleccionar una dirección!", direccion);
-            } 
-          
-            //validacion de telefono
-            if (txtTelefono.value === "") {
-            success = false;
-            mensaje("¡Telefono es obligatorio!", telefono);
-            } else if (!num.test(txtTelefono.value)) {
-            success = false;
-            mensaje("¡Debe ingresar numeros!", telefono);
-            }else if(!tel.test(txtTelefono.value)){
-                success = false;
-                mensaje("¡El numero debe iniciar con 09!", telefono);
-
-            }
-   
-            //validacion de ocupacion
-            if (txtOcupacion.value === "") {
-                bandera = false;
-                mensaje("¡Ingresar ocupacion es obligatorio!", ocupacion);
-            } else if (!letras.test(txtOcupacion.value)) {
-                bandera = false;
-                mensaje("¡Debe contener solo letras!", ocupacion);
-                
-            } else if (!noSpaces.test(txtOcupacion.value)) {
-                bandera = false;
-                mensaje("¡No ingresar espacios.!", ocupacion);
-            }
-
-            //validacion de idioma
-            if ( selIdioma.value === null || selIdioma.value ==='0') {
-                bandera=false;
-                mensaje("¡Es obligatorio Seleccionar un idioma!", idioma);
-            }
-
-            //validacion de hobies
-            if (txtHobbies.value === "") {
-                bandera = false;
-                mensaje("¡Ingresar hobbies es obligatorio!", hobbies);
-            } else if (!letras.test(txtHobbies.value)) {
-                bandera = false;
-                mensaje("¡Debe contener solo letras!", hobbies);
-                
-            } else if (!noSpaces.test(txtHobbies.value)) {
-                bandera = false;
-                mensaje("¡No ingresar espacios!", hobbies);
-            }
-
-            //validacion de la fecha de nacimiento
-            var dato = dateFechaNacimiento.value;
-            var fechaNacimiento = new Date(dato);
-            var anioN = fechaNacimiento.getFullYear();
-            var fechaActual = new Date();
-            var anioA = fechaActual.getFullYear();
-            if (anioN > anioA) {
-                bandera = false;
-                mensaje("¡La fecha de nacimiento no puede ser mayor a la fecha actual!", dateFechaNacimiento);
-            }else if (anioN < 1940){
-                bandera = false;
-                mensaje("¡La fecha de nacimiento no puede ser menor a 1940!", dateFechaNacimiento);
-
-            }else if ((anioA - anioN)< 18){
-                bandera = false;
-                mensaje("¡Debes ser mayor de 18 años para registrarte!", dateFechaNacimiento);
-
-            }
-            if (!bandera) { 
-                event.preventDefault();
-            }
-            
+        // Validación de nombre
+        if (txtNombre.value === "") {
+          bandera = false;
+          mensaje("¡Ingresar nombre es obligatorio!", nombre);
+        } else if (!letras.test(txtNombre.value)) {
+          bandera = false;
+          mensaje("¡El nombre debe contener solo letras!", nombre);
+        } else if (noSpaces.test(txtNombre.value)) {
+          bandera = false;
+          mensaje("¡Ingrese un nombre y un apellido.!", nombre);
         }
 
-        /*Validaciones KeyPress*/
+        // Validación de correo
+        if (txtEmail.value === "") {
+          bandera = false;
+          mensaje("¡Ingresar correo es obligatorio!", correo);
+        } else if (!validDomain.test(txtEmail.value)) {
+          bandera = false;
+          mensaje("¡Correo debe ser institucional.!", correo);
+        }
 
-        // KeyPress nombre
-        form.nombre.addEventListener("keypress", function (e) {
+        // Validación de genero
+        let sel = false;
+        for (let i = 0; i < radGenero.length; i++) {
+          if (radGenero[i].checked) {
+            sel = true;
+            let res = radGenero[i].value;
+            break;
+          }
+        }
+        if (!sel) {
+          bandera = false;
+          mensaje("¡Seleccione un género!", radGenero[0]);
+        }
+
+        //validacion de direccion
+        if (seldireccion.value === null || seldireccion.value === "0") {
+          bandera = false;
+          mensaje("¡Es obligatorio Seleccionar una dirección!", direccion);
+        }
+
+        //validacion de telefono
+        if (txtTelefono.value === "") {
+          success = false;
+          mensaje("¡Telefono es obligatorio!", telefono);
+        } else if (!num.test(txtTelefono.value)) {
+          success = false;
+          mensaje("¡Debe ingresar numeros!", telefono);
+        } else if (!tel.test(txtTelefono.value)) {
+          success = false;
+          mensaje("¡El numero debe iniciar con 09!", telefono);
+        }
+
+        //validacion de ocupacion
+        if (txtOcupacion.value === "") {
+          bandera = false;
+          mensaje("¡Ingresar ocupacion es obligatorio!", ocupacion);
+        } else if (!letras.test(txtOcupacion.value)) {
+          bandera = false;
+          mensaje("¡Debe contener solo letras!", ocupacion);
+        } else if (!noSpaces.test(txtOcupacion.value)) {
+          bandera = false;
+          mensaje("¡No ingresar espacios.!", ocupacion);
+        }
+
+        //validacion de idioma
+        if (selIdioma.value === null || selIdioma.value === "0") {
+          bandera = false;
+          mensaje("¡Es obligatorio Seleccionar un idioma!", idioma);
+        }
+
+        //validacion de hobies
+        if (txtHobbies.value === "") {
+          bandera = false;
+          mensaje("¡Ingresar hobbies es obligatorio!", hobbies);
+        } else if (!letras.test(txtHobbies.value)) {
+          bandera = false;
+          mensaje("¡Debe contener solo letras!", hobbies);
+        } else if (!noSpaces.test(txtHobbies.value)) {
+          bandera = false;
+          mensaje("¡No ingresar espacios!", hobbies);
+        }
+
+        //validacion de la fecha de nacimiento
+        var dato = dateFechaNacimiento.value;
+        var fechaNacimiento = new Date(dato);
+        var anioN = fechaNacimiento.getFullYear();
+        var fechaActual = new Date();
+        var anioA = fechaActual.getFullYear();
+        if (anioN > anioA) {
+          bandera = false;
+          mensaje(
+            "¡La fecha de nacimiento no puede ser mayor a la fecha actual!",
+            dateFechaNacimiento
+          );
+        } else if (anioN < 1940) {
+          bandera = false;
+          mensaje(
+            "¡La fecha de nacimiento no puede ser menor a 1940!",
+            dateFechaNacimiento
+          );
+        } else if (anioA - anioN < 18) {
+          bandera = false;
+          mensaje(
+            "¡Debes ser mayor de 18 años para registrarte!",
+            dateFechaNacimiento
+          );
+        }
+        if (!bandera) {
+          event.preventDefault();
+        }
+      }
+
+      /*Validaciones KeyPress*/
+
+      // KeyPress nombre
+      form.nombre.addEventListener("keypress", function (e) {
         if (e.target.value.length >= 25) {
-            e.preventDefault();
+          e.preventDefault();
         }
-        });
-        // KeyPress telefono
-        form.telefono.addEventListener("keypress", function (e) {
+      });
+      // KeyPress telefono
+      form.telefono.addEventListener("keypress", function (e) {
         if (e.target.value.length >= 10) {
-            e.preventDefault();
+          e.preventDefault();
         }
-        });
+      });
 
-        // KeyPress  ocupacion 
-        form.ocupacion.addEventListener("keypress", function (e) {
+      // KeyPress  ocupacion
+      form.ocupacion.addEventListener("keypress", function (e) {
         if (e.target.value.length >= 18) {
-            e.preventDefault();
+          e.preventDefault();
         }
-        });
+      });
 
-        // KeyPress  hobbies 
-        form.hobbies.addEventListener("keypress", function (e) {
+      // KeyPress  hobbies
+      form.hobbies.addEventListener("keypress", function (e) {
         if (e.target.value.length >= 15) {
-            e.preventDefault();
+          e.preventDefault();
         }
-        });
-        //areglo
+      });
+      //areglo
     </script>
-    
-</body>
+  </body>
 </html>
