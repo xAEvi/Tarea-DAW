@@ -14,7 +14,7 @@
       .container {
         margin-left: 100px;
         float: left;
-        height: 100vh;
+        min-height: 100vh;
         background-color: #b2d5d1;
         width: calc(100vw - 125px);
       }
@@ -167,6 +167,10 @@
       }
 
       @media (max-width: 775px) {
+        body {
+          background-color: #b2d5d1;
+        }
+
         .search-bar input::placeholder {
           opacity: 0;
         }
