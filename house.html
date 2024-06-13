@@ -35,10 +35,27 @@
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
+      .grupo-form {
+        margin-bottom: 10px;
+      }
 
+      .grupo-form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .grupo-form input,
+      .grupo-form select,
+      .grupo-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
       .opinion,
       .contact_info,
-      .fotos_casa {
+      .fotos_casa,
+      .contenedor_formulario {
         background-color: #f9f9f9;
         padding: 20px;
         border-radius: 8px;
@@ -60,9 +77,13 @@
 
       .informacion_propiedad,
       #propiedad_imagen,
-      .boton {
-        float: left;
+      .boton,
+      #enviar {
         margin-top: 10px;
+      }
+      .boton #resena {
+        display: block;
+        float: right;
       }
 
       .info_imagen > .informacion_propiedad {
@@ -82,7 +103,8 @@
         }
       }
 
-      .boton button {
+      .boton button,
+      #enviar {
         background-color: #19828c;
         color: #fff;
         border: none;
@@ -91,7 +113,7 @@
         margin-right: 10px;
       }
 
-      .boton button:hover {
+      button:hover {
         background-color: #1a415a;
       }
 
@@ -118,12 +140,19 @@
       .contact_info h3 ~ p {
         text-align: left;
       }
-
+      h3,
+      h1 {
+        color: #30616c;
+      }
       .detalle_propiedad::before {
         content: "Casa en promoción: ";
         font-weight: bold;
         color: red;
         font-size: 1.2em;
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
       }
 
       main {
@@ -307,12 +336,16 @@
     <main>
       <div class="contenedor">
         <section class="detalle_propiedad">
-          <div>
-            <h1 style="text-align: center; color: #30616c">Casa Moderna</h1>
+          <div class="boton">
+            <button id="resena">Reportar Problemas</button>
           </div>
+          <div>
+            <h1 style="text-align: center">Casa Moderna</h1>
+          </div>
+
           <article class="info_imagen">
             <div class="informacion_propiedad">
-              <h3 style="color: #30616c">Detalles de la propiedad</h3>
+              <h3>Detalles de la propiedad</h3>
               <ul>
                 <li>
                   <strong>Dirección:</strong> Calle: 123, Ciudad: Guayaquil,
@@ -322,7 +355,7 @@
                   <strong>Descripción:</strong> Una hermosa propiedad, muy
                   espaciosa con grandes vistas de la ciudad.
                 </li>
-                <li><strong>Precio de la casa:</strong> $1000 mensuales</li>
+                <li><strong>Precio de la casa:</strong> $2,123</li>
                 <li>
                   <strong>Incluido:</strong> Wi-Fi, Aire acondicionado,
                   Estacionamiento, Piscina, Televisión
@@ -342,47 +375,82 @@
           </article>
           <div class="boton">
             <button id="anadir">Añadir a Favoritos</button>
-            <button id="comprar">Comprar</button>
+            <button id="contactarse">Contactarse</button>
           </div>
+          <div
+            id="mensaje-favorito"
+            style="display: none; color: green; margin-top: 10px"
+          ></div>
         </section>
         <section class="opiniones">
-          <h3 style="color: #30616c">Calificaciones y Opiniones</h3>
-          <div class="opinion">
-            <details>
-              <summary><strong>Usuario:</strong> Brithany Vera</summary>
-              <p><strong>Calificación:</strong> ★☆☆☆☆</p>
-              <p>
-                <strong>Comentario:</strong> El wifi está lento, pésimo servicio
-                para un estudiante 😔.
-              </p>
-            </details>
+          <div class="publicado">
+            <h3>Calificaciones y Opiniones</h3>
+            <div class="opinion">
+              <details>
+                <summary><strong>Usuario:</strong> Brithany Vera</summary>
+                <p><strong>Calificación:</strong> ★☆☆☆☆</p>
+                <p>
+                  <strong>Comentario:</strong> El wifi está lento, pésimo
+                  servicio para un estudiante 😔.
+                </p>
+              </details>
+            </div>
+            <div class="opinion">
+              <details>
+                <summary><strong>Usuario:</strong> Ana Guitierrez</summary>
+                <p><strong>Calificación:</strong> ★★★★★</p>
+                <p>
+                  <strong>Comentario:</strong> La mejor casa en la que haya
+                  pasado el rato.
+                </p>
+              </details>
+            </div>
           </div>
-          <div class="opinion">
-            <details>
-              <summary><strong>Usuario:</strong> Ana Guitierrez</summary>
-              <p><strong>Calificación:</strong> ★★★★★</p>
-              <p>
-                <strong>Comentario:</strong> La mejor casa en la que haya pasado
-                el rato.
-              </p>
-            </details>
-          </div>
+
+          <section class="contenedor_formulario">
+            <h3>Deja tu opinión</h3>
+            <form id="formulario-opinion">
+              <div class="grupo-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" />
+                <div class="error" id="error-nombre"></div>
+              </div>
+              <div class="grupo-form">
+                <label for="calificacion">Calificación:</label>
+                <select id="calificacion" name="calificacion">
+                  <option value="1">★☆☆☆☆</option>
+                  <option value="2">★★☆☆☆</option>
+                  <option value="3">★★★☆☆</option>
+                  <option value="4">★★★★☆</option>
+                  <option value="5">★★★★★</option></select
+                ><br />
+              </div>
+              <div class="grupo-form">
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario"></textarea>
+                <div class="error" id="error-comentario"></div>
+              </div>
+              <div class="grupo-form">
+                <button type="submit" id="enviar">Enviar</button>
+              </div>
+            </form>
+          </section>
         </section>
 
         <aside class="contact_info">
-          <h3 style="color: #30616c">Información de Contacto</h3>
+          <h3>Información de Contacto</h3>
           <p><strong>Propietario:</strong> Grupo 1</p>
           <p><strong>Correo Electrónico:</strong> jeremuvelez328@gmail.com</p>
           <p><strong>Teléfono:</strong> +0979026756</p>
         </aside>
         <div class="galeria_casa">
           <section class="fotos_casa">
-            <h3 style="color: #30616c">Patio trasero</h3>
+            <h3>Patio trasero</h3>
             <p>Este domicilio tiene un patio muy espacioso y hermoso.</p>
             <img src="assets/img/patio.jpg" alt="Imagen casa" />
           </section>
           <section class="fotos_casa">
-            <h3 style="color: #30616c">Interior de la casa</h3>
+            <h3>Interior de la casa</h3>
             <p>La casa tiene una hermosa sala.</p>
             <img src="assets/img/sala.jpg" alt="Imagen casa" />
           </section>
@@ -430,5 +498,95 @@
         >
       </div>
     </footer>
+    <script type="text/javascript">
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("mouseenter", () => {
+          button.style.transform = "scale(1.1)";
+        });
+
+        button.addEventListener("mouseleave", () => {
+          button.style.transform = "scale(1)";
+        });
+      });
+      document
+        .getElementById("contactarse")
+        .addEventListener("click", function () {
+          window.location.href = "Contacto.html";
+        });
+      document.getElementById("anadir").addEventListener("click", function () {
+        const boton = document.getElementById("anadir");
+        const mensaje = document.getElementById("mensaje-favorito");
+        if (boton.innerText === "Añadir a Favoritos") {
+          boton.innerText = "Quitar de Favoritos";
+          mensaje.style.display = "block";
+          mensaje.innerText = "Se añadió a favoritos";
+        } else {
+          boton.innerText = "Añadir a Favoritos";
+          mensaje.style.display = "none";
+        }
+      });
+      document
+        .getElementById("formulario-opinion")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
+          const nombre = document.getElementById("nombre").value;
+          const calificacion = document.getElementById("calificacion").value;
+          const comentario = document.getElementById("comentario").value;
+
+          // Validar Nombre
+          if (nombre.trim() === "") {
+            isValid = false;
+            document.getElementById("error-nombre").innerText =
+              "El nombre es obligatorio.";
+          } else {
+            document.getElementById("error-nombre").innerText = "";
+          }
+
+          // Validar Mensaje
+          if (comentario.trim() === "") {
+            isValid = false;
+            document.getElementById("error-comentario").innerText =
+              "El comentario es obligatorio.";
+          } else {
+            document.getElementById("error-comentario").innerText = "";
+          }
+          if (isValid) {
+            // Creación de la opinión...
+
+            const opinionDiv = document.createElement("div");
+            opinionDiv.classList.add("opinion");
+
+            const details = document.createElement("details");
+            const summary = document.createElement("summary");
+            summary.innerHTML = "<strong>Usuario:</strong>" + " " + nombre;
+            details.appendChild(summary);
+
+            const calificacionP = document.createElement("p");
+            calificacionP.innerHTML = `<strong>Calificación:</strong> ${"★".repeat(
+              calificacion
+            )}${"☆".repeat(5 - calificacion)}`;
+            details.appendChild(calificacionP);
+
+            const comentarioP = document.createElement("p");
+            comentarioP.innerHTML =
+              "<strong>Comentario:</strong>" + " " + comentario;
+            details.appendChild(comentarioP);
+
+            opinionDiv.appendChild(details);
+            document.querySelector(".publicado").appendChild(opinionDiv);
+
+            document.getElementById("formulario-opinion").reset();
+
+            event.preventDefault();
+          } else {
+            event.preventDefault(); // Detener el envío del formulario si hay campos vacíos
+          }
+        });
+
+      document.getElementById("resena").addEventListener("click", function () {
+        window.location.href = "reportarProblemas.html";
+      });
+    </script>
   </body>
 </html>

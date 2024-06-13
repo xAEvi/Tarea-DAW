@@ -5,163 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Jhon Quinto" />
     <link rel="stylesheet" href="assets/style.css" />
-    <title>Contacto - Alquila Fácil</title>
+    <title>Contáctanos</title>
     <script
       src="https://kit.fontawesome.com/8b96afa7e9.js"
       crossorigin="anonymous"
     ></script>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: #f4f4f4;
-      }
-
       .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        height: 100vh;
         margin-left: 100px;
-      }
-
-      .cards-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        width: 100%;
-        max-width: 1200px;
-      }
-
-      .card {
+        float: left;
+        min-height: 100vh;
         background-color: #b2d5d1;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-sizing: border-box;
-        overflow: hidden;
+        width: calc(100vw - 125px);
       }
 
-      .info-card {
-        width: calc(100% - 1rem);
+      .form {
+        background-color: #65b5b1;
+        width: 750px;
+        margin: 75px auto;
+        border-radius: 25px;
       }
 
-      .form-container {
-        margin-top: 125px;
-        width: calc(100% - 1rem);
-      }
-
-      .card h1,
-      .card h2,
-      .card p {
-        margin: 0.5rem 0;
-      }
-
-      .card h1,
-      .card h2 {
-        color: #fff;
-      }
-
-      .options-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .option {
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem;
-        box-sizing: border-box;
-        overflow-wrap: break-word;
-      }
-
-      .form-container input,
-      .form-container textarea {
-        width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        background-color: #fff;
-      }
-
-      .form-container .row {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .form-container .row input {
-        flex: 1;
-      }
-
-      .form-container button {
-        display: block;
-        width: 100%;
-        padding: 0.75rem;
-        border: none;
-        border-radius: 5px;
-        background-color: #19828c;
-        color: #fff;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-
-      .form-container button:hover {
-        background-color: #136f70;
-      }
-
-      .form-container small {
-        display: block;
-        margin-top: 1rem;
+      #title {
+        color: #19828d;
         text-align: center;
-        font-size: 0.875rem;
+        margin-top: 3rem;
       }
 
-      .map-container {
-        margin-top: 2rem;
-        width: 100%;
-        text-align: center;
-        background-color: #65a5a5;
+      .error {
+        color: red;
+      }
+      .campo {
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #agregarPropiedad {
         padding: 2rem;
-        border-radius: 8px;
-        box-sizing: border-box;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .error {
+        color: #d62e2e;
+      }
+      .campo {
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
       }
 
-      .map-container h3 {
-        margin-bottom: 1rem;
-        color: #fff;
+      #agregarPropiedad {
+        color: #efefef;
+        padding: 2rem;
+        font-size: 25px;
+        font-weight: bold;
       }
 
-      .map-container iframe {
-        width: 100%;
-        height: 450px;
+      .btn-container {
+        margin-top: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .add,
+      .cancel {
+        padding: 1rem;
+        border-radius: 5px;
         border: none;
-        border-radius: 8px;
+        color: #efefef;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 20px;
       }
 
-      @media (max-width: 768px) {
-        .info-card,
-        .form-container {
-          width: 100%;
-          margin: 0 0.5rem;
-        }
+      .add {
+        background-color: #30616c;
+      }
 
-        .map-container {
-          margin: 2rem 0.5rem;
-          padding: 1rem;
-        }
+      .cancel {
+        background-color: #e47c7c;
+      }
 
-        .container {
-          margin-left: 0;
-        }
+      .add:hover,
+      .cancel:hover {
+        cursor: pointer;
+        transform: scale(110%);
       }
 
       #main-icon {
@@ -237,6 +167,10 @@
       }
 
       @media (max-width: 775px) {
+        body {
+          background-color: #b2d5d1;
+        }
+
         .search-bar input::placeholder {
           opacity: 0;
         }
@@ -269,7 +203,7 @@
           margin: 0;
         }
 
-        .main-container {
+        .container {
           width: auto;
           margin-left: 2rem;
           float: none;
@@ -304,6 +238,14 @@
 
         .footer {
           width: 100%;
+        }
+
+        .form {
+          width: 75%;
+        }
+
+        #agregarPropiedad {
+          font-size: 16px;
         }
       }
     </style>
@@ -340,46 +282,74 @@
       </div>
     </div>
     <div class="container">
-      <div class="cards-container">
-        <!-- Tarjeta de formulario de contacto -->
-        <div class="card form-container">
-          <h2>¿Necesitas más información? Háznoslo Saber!</h2>
-          <h3>Ingresa tu información y nosotros te contactaremos</h3>
-          <form id="contactForm" action="#" method="post">
-            <div class="row">
-              <input
-                type="text"
-                id="firstname"
-                name="firstname"
-                placeholder="Nombre"
-              />
-              <input
-                type="text"
-                id="lastname"
-                name="lastname"
-                placeholder="Apellido"
-              />
-            </div>
-            <input id="email" name="email" placeholder="Correo Electrónico" />
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Número de Teléfono"
-            />
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Mensaje Adicional"
-            ></textarea>
-            <button type="submit">Enviar</button>
-            <small
-              >Al enviar el mensaje acepta nuestros términos de servicio y
-              condiciones</small
+      <h1 id="title">Agregar Propiedad</h1>
+      <div class="form">
+        <form id="agregarPropiedad">
+          <div class="campo">
+            <label id="labelPropiedad" for="tipoPropiedad"
+              >Tipo de Propiedad:</label
             >
-          </form>
-        </div>
+            <select id="tipoPropiedad" name="tipoPropiedad">
+              <option value="">Selecciona un tipo</option>
+              <option value="casa">Casa</option>
+              <option value="departamento">Departamento</option>
+              <option value="local">Local Comercial</option>
+              <option value="terreno">Terreno</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label id="labelTitulo" for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" />
+          </div>
+
+          <div class="campo">
+            <label id="labelDescripcion" for="descripcion">Descripción:</label>
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              rows="4"
+              cols="50"
+            ></textarea>
+          </div>
+
+          <div class="campo">
+            <label id="labelPrecio" for="precio">Precio ($):</label>
+            <input type="number" id="precio" name="precio" />
+          </div>
+
+          <div class="campo">
+            <label id="labelOperacion" for="operacion"
+              >Tipo de Operación:</label
+            >
+            <div class="campo-radio">
+              <input
+                type="radio"
+                id="renta"
+                name="operacion"
+                value="alquiler"
+              />
+              <label for="renta">Alquiler</label>
+              <input type="radio" id="venta" name="operacion" value="venta" />
+              <label for="venta">Venta</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label id="labelDireccion" for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" />
+          </div>
+
+          <div class="campo">
+            <label id="labelContacto" for="contacto">Email de Contacto:</label>
+            <input type="text" id="contacto" name="contacto" />
+          </div>
+
+          <div class="btn-container">
+            <a class="cancel" href="search.html">Cancelar</a>
+            <button class="add" type="submit">Agregar Propiedad</button>
+          </div>
+        </form>
       </div>
     </div>
     <footer class="footer" style="display: block">
@@ -425,66 +395,69 @@
     </footer>
     <script>
       document
-        .getElementById("contactForm")
+        .getElementById("agregarPropiedad")
         .addEventListener("submit", function (event) {
+          let valid = true;
           event.preventDefault();
 
-          var firstname = document.getElementById("firstname").value.trim();
-          var lastname = document.getElementById("lastname").value.trim();
-          var email = document.getElementById("email").value.trim();
-          var phone = document.getElementById("phone").value.trim();
-          var message = document.getElementById("message").value.trim();
-          var valid = true;
+          document.querySelectorAll(".error").forEach(function (element) {
+            element.classList.remove("error");
+          });
 
-          if (firstname === "") {
-            alert("Por favor, ingrese su nombre.");
+          const propertyType = document.getElementById("tipoPropiedad");
+          if (propertyType.value === "") {
+            document.getElementById("labelPropiedad").classList.add("error");
             valid = false;
           }
 
-          if (lastname === "") {
-            alert("Por favor, ingrese su apellido.");
+          const title = document.getElementById("titulo");
+          if (title.value.trim() === "") {
+            document.getElementById("labelTitulo").classList.add("error");
             valid = false;
           }
 
-          if (email === "") {
-            alert("Por favor, ingrese su correo electrónico.");
-            valid = false;
-          } else if (!/\S+@\S+\.\S+/.test(email)) {
-            alert("Por favor, ingrese un correo electrónico válido.");
+          const description = document.getElementById("descripcion");
+          if (description.value.trim() === "") {
+            document.getElementById("labelDescripcion").classList.add("error");
             valid = false;
           }
 
-          if (phone === "") {
-            alert("Por favor, ingrese su número de teléfono.");
-            valid = false;
-          } else if (!/^\d{10}$/.test(phone)) {
-            alert(
-              "Por favor, ingrese un número de teléfono válido (10 dígitos)."
-            );
+          const price = document.getElementById("precio");
+          if (
+            price.value.trim() === "" ||
+            isNaN(price.value) ||
+            parseFloat(price.value) <= 0
+          ) {
+            document.getElementById("labelPrecio").classList.add("error");
             valid = false;
           }
 
-          if (message === "") {
-            alert("Por favor, ingrese un mensaje.");
+          const operationTypeRent = document.getElementById("renta");
+          const operationTypeSale = document.getElementById("venta");
+          if (!operationTypeRent.checked && !operationTypeSale.checked) {
+            document.getElementById("labelOperacion").classList.add("error");
+            valid = false;
+          }
+
+          const address = document.getElementById("direccion");
+          if (address.value.trim() === "") {
+            document.getElementById("labelDireccion").classList.add("error");
+            valid = false;
+          }
+
+          const contactEmail = document.getElementById("contacto");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(contactEmail.value)) {
+            document.getElementById("labelContacto").classList.add("error");
             valid = false;
           }
 
           if (valid) {
-            alert("Formulario enviado con éxito!");
-            this.submit();
+            alert("Propiedad agregada exitosamente!");
+          } else {
+            event.preventDefault();
           }
         });
-
-      // Hover/Zoom
-      const submitButton = document.querySelector(".form-container button");
-
-      submitButton.addEventListener("mouseenter", () => {
-        submitButton.style.transform = "scale(1.1)";
-      });
-
-      submitButton.addEventListener("mouseleave", () => {
-        submitButton.style.transform = "scale(1)";
-      });
     </script>
   </body>
 </html>
